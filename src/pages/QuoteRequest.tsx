@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -9,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
-import { toast } from "@/components/ui/sonner";
+import { toast } from "sonner";
 
 // Form schema definition
 const quoteFormSchema = z.object({
@@ -56,7 +55,7 @@ const QuoteRequest = () => {
       budget: "1000to3000",
       urgency: false,
       installationRequired: true,
-      termsAccepted: false
+      termsAccepted: true
     }
   });
 
