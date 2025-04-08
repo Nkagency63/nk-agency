@@ -94,7 +94,7 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center neon-text">Nos Services</h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto text-center">
-            Découvrez notre gamme complète de services pour la création, fabrication et installation d'enseignes publicitaires.
+            Découvrez notre gamme complète de services pour la création et fabrication d'enseignes publicitaires.
           </p>
         </div>
       </section>
@@ -148,11 +148,11 @@ const Services = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 neon-text">Notre Processus</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              De la conception à l'installation, découvrez comment nous créons votre enseigne publicitaire.
+              De la conception à la fabrication, découvrez comment nous créons votre enseigne publicitaire.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 title: "Consultation",
@@ -168,11 +168,6 @@ const Services = () => {
                 title: "Fabrication",
                 description: "Après validation, nos artisans spécialisés fabriquent votre enseigne avec des matériaux de qualité.",
                 step: "03"
-              },
-              {
-                title: "Installation",
-                description: "Notre équipe technique installe professionnellement votre enseigne à l'emplacement désigné.",
-                step: "04"
               }
             ].map((step, index) => (
               <div key={index} className="bg-black p-8 rounded-xl border border-gray-800">
