@@ -26,6 +26,13 @@ const Home = () => {
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/70 via-black/50 to-black"></div>
         
         <div className="container mx-auto px-4 z-20 mt-16">
+          <div className="flex flex-col items-center mb-8">
+            <img 
+              src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" 
+              alt="NK AGENCY Logo" 
+              className="h-24 mb-6"
+            />
+          </div>
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 text-white leading-tight">
               Des Enseignes <span className="neon-text-blue">Lumineuses</span><br />
@@ -248,6 +255,13 @@ const Home = () => {
       <section className="py-20 bg-gradient-to-b from-secondary to-black relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
+            <div className="flex justify-center mb-6">
+              <img 
+                src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" 
+                alt="NK AGENCY Logo" 
+                className="h-16"
+              />
+            </div>
             <h2 className="text-3xl md:text-5xl font-bold mb-6 neon-text">Prêt à Illuminer Votre Marque ?</h2>
             <p className="text-xl text-gray-300 mb-10">
               Contactez-nous pour discuter de votre projet d'enseigne publicitaire 

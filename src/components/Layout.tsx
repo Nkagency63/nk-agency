@@ -37,8 +37,15 @@ const Layout = () => {
       >
         <div className="container mx-auto flex justify-between items-center px-4">
           <Link to="/" className="flex items-center">
-            <div className="text-white text-2xl font-bold font-montserrat tracking-wider neon-text">
-              NK <span className="neon-text-pink">AGENCY</span>
+            <div className="flex items-center">
+              <img 
+                src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" 
+                alt="NK AGENCY Logo" 
+                className="h-10 mr-2"
+              />
+              <div className="text-white text-2xl font-bold font-montserrat tracking-wider neon-text">
+                <span className="neon-text-pink">AGENCY</span>
+              </div>
             </div>
           </Link>
 
@@ -112,7 +119,16 @@ const Layout = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             <div>
-              <h3 className="text-xl font-bold mb-4 text-white">NK AGENCY</h3>
+              <div className="flex items-center mb-4">
+                <img 
+                  src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" 
+                  alt="NK AGENCY Logo" 
+                  className="h-8 mr-2"
+                />
+                <h3 className="text-xl font-bold text-white">
+                  <span className="neon-text-pink">AGENCY</span>
+                </h3>
+              </div>
               <p className="text-gray-400 mb-4">
                 Agence de communication spécialisée dans la vente d'enseignes publicitaires.
               </p>
