@@ -2,10 +2,12 @@
 import { useState, useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+
 const Layout = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -14,14 +16,17 @@ const Layout = () => {
         setIsScrolled(false);
       }
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location.pathname]);
+
   return <div className="flex flex-col min-h-screen bg-background">
       {/* Header */}
       <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-black bg-opacity-80 backdrop-blur-sm py-3' : 'bg-transparent py-5'}`}>
@@ -30,7 +35,7 @@ const Layout = () => {
             <div className="flex items-center">
               <img src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" alt="NK AGENCY Logo" className="h-10 mr-2" />
               <div className="text-white text-2xl font-bold font-montserrat tracking-wider neon-text">
-                <span className="neon-text-pink text-base text-slate-50">AGENCY</span>
+                <span className="text-white text-base">AGENCY</span>
               </div>
             </div>
           </Link>
@@ -101,7 +106,7 @@ const Layout = () => {
               <div className="flex items-center mb-4">
                 <img src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" alt="NK AGENCY Logo" className="h-8 mr-2" />
                 <h3 className="text-xl font-bold text-white">
-                  <span className="neon-text-pink text-slate-50">AGENCY</span>
+                  <span className="text-white">AGENCY</span>
                 </h3>
               </div>
               <p className="text-gray-400 mb-4">
@@ -157,4 +162,5 @@ const Layout = () => {
       </footer>
     </div>;
 };
+
 export default Layout;
