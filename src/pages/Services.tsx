@@ -83,20 +83,6 @@ const services: Service[] = [
       "Options intérieures et extérieures"
     ],
     colorClass: "neon-text-purple"
-  },
-  {
-    id: 6,
-    title: "Installation & Maintenance",
-    description: "Service complet d'installation professionnelle et de maintenance régulière pour garantir la durabilité de vos enseignes.",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&q=80&w=1000",
-    features: [
-      "Installation par des techniciens certifiés",
-      "Conformité aux normes de sécurité",
-      "Contrats de maintenance préventive",
-      "Interventions rapides en cas de panne",
-      "Garantie sur l'installation"
-    ],
-    colorClass: "neon-text"
   }
 ];
 
