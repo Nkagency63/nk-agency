@@ -100,7 +100,7 @@ const Layout = () => {
               <div className="flex items-center mb-4">
                 <img src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" alt="NK AGENCY Logo" className="h-8 mr-2" />
                 <h3 className="text-xl font-bold text-white">
-                  <span className="neon-text-pink">AGENCY</span>
+                  <span className="neon-text-pink text-slate-50">AGENCY</span>
                 </h3>
               </div>
               <p className="text-gray-400 mb-4">
