@@ -29,7 +29,7 @@ const Layout = () => {
             <div className="flex items-center">
               <img src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" alt="NK AGENCY Logo" className="h-10 mr-2" />
               <div className="text-white text-2xl font-bold font-montserrat tracking-wider neon-text">
-                <span className="neon-text-pink text-base text-slate-100">AGENCY</span>
+                <span className="neon-text-pink text-base text-slate-50">AGENCY</span>
               </div>
             </div>
           </Link>
