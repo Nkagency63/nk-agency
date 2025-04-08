@@ -1,13 +1,10 @@
-
 import { useState, useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-
 const Layout = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -16,97 +13,78 @@ const Layout = () => {
         setIsScrolled(false);
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location.pathname]);
-
-  return (
-    <div className="flex flex-col min-h-screen bg-background">
+  return <div className="flex flex-col min-h-screen bg-background">
       {/* Header */}
-      <header 
-        className={`fixed w-full z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-black bg-opacity-80 backdrop-blur-sm py-3' : 'bg-transparent py-5'
-        }`}
-      >
+      <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-black bg-opacity-80 backdrop-blur-sm py-3' : 'bg-transparent py-5'}`}>
         <div className="container mx-auto flex justify-between items-center px-4">
           <Link to="/" className="flex items-center">
             <div className="flex items-center">
-              <img 
-                src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" 
-                alt="NK AGENCY Logo" 
-                className="h-10 mr-2"
-              />
+              <img src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" alt="NK AGENCY Logo" className="h-10 mr-2" />
               <div className="text-white text-2xl font-bold font-montserrat tracking-wider neon-text">
-                <span className="neon-text-pink">AGENCY</span>
+                <span className="neon-text-pink text-base text-slate-100">AGENCY</span>
               </div>
             </div>
           </Link>
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex space-x-8">
-            {[
-              { name: 'Accueil', path: '/' },
-              { name: 'Portfolio', path: '/portfolio' },
-              { name: 'Services', path: '/services' },
-              { name: 'Devis', path: '/quote' },
-              { name: 'Contact', path: '/contact' },
-            ].map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`text-sm uppercase tracking-wide font-medium transition-all hover:text-white ${
-                  location.pathname === item.path 
-                    ? 'text-white border-b-2 border-white'
-                    : 'text-gray-400 hover:border-b-2 hover:border-gray-400'
-                }`}
-              >
+            {[{
+            name: 'Accueil',
+            path: '/'
+          }, {
+            name: 'Portfolio',
+            path: '/portfolio'
+          }, {
+            name: 'Services',
+            path: '/services'
+          }, {
+            name: 'Devis',
+            path: '/quote'
+          }, {
+            name: 'Contact',
+            path: '/contact'
+          }].map(item => <Link key={item.name} to={item.path} className={`text-sm uppercase tracking-wide font-medium transition-all hover:text-white ${location.pathname === item.path ? 'text-white border-b-2 border-white' : 'text-gray-400 hover:border-b-2 hover:border-gray-400'}`}>
                 {item.name}
-              </Link>
-            ))}
+              </Link>)}
           </nav>
 
           {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden text-white"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
+          <button className="md:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-black bg-opacity-95 backdrop-blur-sm">
+        {mobileMenuOpen && <div className="md:hidden absolute top-full left-0 right-0 bg-black bg-opacity-95 backdrop-blur-sm">
             <nav className="flex flex-col px-4 py-6 space-y-6">
-              {[
-                { name: 'Accueil', path: '/' },
-                { name: 'Portfolio', path: '/portfolio' },
-                { name: 'Services', path: '/services' },
-                { name: 'Devis', path: '/quote' },
-                { name: 'Contact', path: '/contact' },
-              ].map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={`text-sm uppercase tracking-wide font-medium transition-all ${
-                    location.pathname === item.path 
-                      ? 'text-white'
-                      : 'text-gray-400 hover:text-white'
-                  }`}
-                >
+              {[{
+            name: 'Accueil',
+            path: '/'
+          }, {
+            name: 'Portfolio',
+            path: '/portfolio'
+          }, {
+            name: 'Services',
+            path: '/services'
+          }, {
+            name: 'Devis',
+            path: '/quote'
+          }, {
+            name: 'Contact',
+            path: '/contact'
+          }].map(item => <Link key={item.name} to={item.path} className={`text-sm uppercase tracking-wide font-medium transition-all ${location.pathname === item.path ? 'text-white' : 'text-gray-400 hover:text-white'}`}>
                   {item.name}
-                </Link>
-              ))}
+                </Link>)}
             </nav>
-          </div>
-        )}
+          </div>}
       </header>
 
       {/* Main Content */}
@@ -120,11 +98,7 @@ const Layout = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             <div>
               <div className="flex items-center mb-4">
-                <img 
-                  src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" 
-                  alt="NK AGENCY Logo" 
-                  className="h-8 mr-2"
-                />
+                <img src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" alt="NK AGENCY Logo" className="h-8 mr-2" />
                 <h3 className="text-xl font-bold text-white">
                   <span className="neon-text-pink">AGENCY</span>
                 </h3>
@@ -180,8 +154,6 @@ const Layout = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Layout;
