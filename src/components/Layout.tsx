@@ -149,7 +149,7 @@ const Layout = () => {
             <div>
               <h3 className="text-xl font-bold mb-4 text-white">Contact</h3>
               <ul className="space-y-2 text-gray-400">
-                <li>15 Rue des Lumières, 75001 Paris</li>
+                <li>2bis avenue Édouard Herriot, 63800 COURNON-D'AUVERGNE</li>
                 <li>info@nkagency.com</li>
                 <li>+33 (0)1 23 45 67 89</li>
               </ul>

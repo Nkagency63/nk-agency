@@ -142,7 +142,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-medium mb-1">Adresse</h3>
-                    <p className="text-gray-300">15 Rue des Lumières<br />75001 Paris, France</p>
+                    <p className="text-gray-300">2bis avenue Édouard Herriot<br />63800 COURNON-D'AUVERGNE, France</p>
                   </div>
                 </div>
 
