@@ -1,0 +1,171 @@
+
+import { useState, useEffect } from "react";
+import { Outlet, Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+
+const Layout = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  return (
+    <div className="flex flex-col min-h-screen bg-background">
+      {/* Header */}
+      <header 
+        className={`fixed w-full z-50 transition-all duration-300 ${
+          isScrolled ? 'bg-black bg-opacity-80 backdrop-blur-sm py-3' : 'bg-transparent py-5'
+        }`}
+      >
+        <div className="container mx-auto flex justify-between items-center px-4">
+          <Link to="/" className="flex items-center">
+            <div className="text-white text-2xl font-bold font-montserrat tracking-wider neon-text">
+              NK <span className="neon-text-pink">AGENCY</span>
+            </div>
+          </Link>
+
+          {/* Desktop Menu */}
+          <nav className="hidden md:flex space-x-8">
+            {[
+              { name: 'Accueil', path: '/' },
+              { name: 'Portfolio', path: '/portfolio' },
+              { name: 'Services', path: '/services' },
+              { name: 'Devis', path: '/quote' },
+              { name: 'Contact', path: '/contact' },
+            ].map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                className={`text-sm uppercase tracking-wide font-medium transition-all hover:text-white ${
+                  location.pathname === item.path 
+                    ? 'text-white border-b-2 border-white'
+                    : 'text-gray-400 hover:border-b-2 hover:border-gray-400'
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden text-white"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-black bg-opacity-95 backdrop-blur-sm">
+            <nav className="flex flex-col px-4 py-6 space-y-6">
+              {[
+                { name: 'Accueil', path: '/' },
+                { name: 'Portfolio', path: '/portfolio' },
+                { name: 'Services', path: '/services' },
+                { name: 'Devis', path: '/quote' },
+                { name: 'Contact', path: '/contact' },
+              ].map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`text-sm uppercase tracking-wide font-medium transition-all ${
+                    location.pathname === item.path 
+                      ? 'text-white'
+                      : 'text-gray-400 hover:text-white'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        )}
+      </header>
+
+      {/* Main Content */}
+      <main className="flex-grow">
+        <Outlet />
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-black py-12 border-t border-gray-800">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div>
+              <h3 className="text-xl font-bold mb-4 text-white">NK AGENCY</h3>
+              <p className="text-gray-400 mb-4">
+                Agence de communication spécialisée dans la vente d'enseignes publicitaires.
+              </p>
+              <p className="text-gray-400">
+                Des enseignes qui captivent, des messages qui résonnent.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-4 text-white">Liens</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/" className="text-gray-400 hover:text-white transition-colors">
+                    Accueil
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/portfolio" className="text-gray-400 hover:text-white transition-colors">
+                    Portfolio
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services" className="text-gray-400 hover:text-white transition-colors">
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/quote" className="text-gray-400 hover:text-white transition-colors">
+                    Demander un devis
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-4 text-white">Contact</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li>15 Rue des Lumières, 75001 Paris</li>
+                <li>info@nkagency.com</li>
+                <li>+33 (0)1 23 45 67 89</li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-10 pt-6 border-t border-gray-800 text-center text-gray-500">
+            <p>© {new Date().getFullYear()} NK AGENCY. Tous droits réservés.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Layout;
