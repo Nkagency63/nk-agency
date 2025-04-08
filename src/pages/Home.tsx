@@ -19,7 +19,7 @@ const Home = () => {
         
         <div className="container mx-auto px-4 z-20 mt-16">
           <div className="flex flex-col items-center mb-8">
-            
+            <img src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" alt="NK AGENCY Logo" className="h-24 mb-6" />
           </div>
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 text-white leading-tight">
@@ -56,7 +56,7 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Nos Services</h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="GOODIES">
               Une gamme complète de solutions pour vos projets d'enseignes publicitaires.
             </p>
           </div>
