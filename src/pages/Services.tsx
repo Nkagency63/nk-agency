@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { CheckCircle } from "lucide-react";
 
@@ -12,7 +11,7 @@ type Service = {
   colorClass: string;
 };
 
-// Services data
+// Services data - removing Installation & Maintenance service
 const services: Service[] = [
   {
     id: 1,
