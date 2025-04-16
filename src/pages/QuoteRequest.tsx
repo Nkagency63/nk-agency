@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -21,8 +22,9 @@ const quoteFormSchema = z.object({
     required_error: "Veuillez sélectionner un type d'enseigne",
   }),
   otherType: z.string().optional(),
-  width: z.string().min(1, "Veuillez indiquer la largeur"),
-  height: z.string().min(1, "Veuillez indiquer la hauteur"),
+  width: z.string().min(1, "Veuillez indiquer la largeur du projet"),
+  height: z.string().min(1, "Veuillez indiquer la hauteur du projet"),
+  projectText: z.string().min(1, "Veuillez indiquer le texte à afficher sur l'enseigne"),
   location: z.enum(["interior", "exterior", "both"], {
     required_error: "Veuillez indiquer l'emplacement",
   }),
@@ -228,10 +230,10 @@ const QuoteRequest = () => {
               )}
 
               <div className="space-y-2">
-                <Label htmlFor="width">Largeur (cm) *</Label>
+                <Label htmlFor="width">Largeur du projet (cm) *</Label>
                 <Input 
                   id="width" 
-                  placeholder="Largeur approximative" 
+                  placeholder="Largeur approximative du projet" 
                   {...register("width")}
                   className={errors.width ? "border-red-500" : ""}
                 />
@@ -241,15 +243,28 @@ const QuoteRequest = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="height">Hauteur (cm) *</Label>
+                <Label htmlFor="height">Hauteur du projet (cm) *</Label>
                 <Input 
                   id="height" 
-                  placeholder="Hauteur approximative" 
+                  placeholder="Hauteur approximative du projet" 
                   {...register("height")}
                   className={errors.height ? "border-red-500" : ""}
                 />
                 {errors.height && (
                   <p className="text-red-500 text-sm">{errors.height.message}</p>
+                )}
+              </div>
+
+              <div className="md:col-span-2 space-y-2">
+                <Label htmlFor="projectText">Texte de l'enseigne *</Label>
+                <Input 
+                  id="projectText" 
+                  placeholder="Texte à afficher sur l'enseigne" 
+                  {...register("projectText")}
+                  className={errors.projectText ? "border-red-500" : ""}
+                />
+                {errors.projectText && (
+                  <p className="text-red-500 text-sm">{errors.projectText.message}</p>
                 )}
               </div>
 
@@ -284,7 +299,7 @@ const QuoteRequest = () => {
                 <Label htmlFor="description">Description du projet *</Label>
                 <Textarea 
                   id="description" 
-                  placeholder="Décrivez votre projet d'enseigne (texte, logo, couleurs, etc.)" 
+                  placeholder="Décrivez votre projet d'enseigne (couleurs, matériaux, etc.)" 
                   {...register("description")}
                   className={`min-h-[120px] ${errors.description ? "border-red-500" : ""}`}
                 />
