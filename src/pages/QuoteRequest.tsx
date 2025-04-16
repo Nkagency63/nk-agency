@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -11,14 +10,14 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 
-// Form schema definition
+// Update the form schema to only include the specified sign types
 const quoteFormSchema = z.object({
   firstName: z.string().min(2, "Le prénom doit comporter au moins 2 caractères"),
   lastName: z.string().min(2, "Le nom doit comporter au moins 2 caractères"),
   email: z.string().email("L'e-mail doit être valide"),
   phone: z.string().min(10, "Le numéro de téléphone doit comporter au moins 10 caractères"),
   company: z.string().optional(),
-  signType: z.enum(["neon", "letters", "cabinet", "led", "panel", "relief", "ledLetters", "other"], {
+  signType: z.enum(["relief", "ledLetters", "other"], {
     required_error: "Veuillez sélectionner un type d'enseigne",
   }),
   otherType: z.string().optional(),
@@ -51,7 +50,7 @@ const QuoteRequest = () => {
   } = useForm<QuoteFormData>({
     resolver: zodResolver(quoteFormSchema),
     defaultValues: {
-      signType: "neon",
+      signType: "relief",
       location: "exterior",
       budget: "1000to3000",
       urgency: false,
@@ -177,26 +176,6 @@ const QuoteRequest = () => {
                     setShowOtherType(value === "other");
                   }}
                 >
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="neon" id="neon" />
-                    <Label htmlFor="neon" className="cursor-pointer">Enseigne Néon</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="letters" id="letters" />
-                    <Label htmlFor="letters" className="cursor-pointer">Lettres Lumineuses</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="cabinet" id="cabinet" />
-                    <Label htmlFor="cabinet" className="cursor-pointer">Caisson Lumineux</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="led" id="led" />
-                    <Label htmlFor="led" className="cursor-pointer">Enseigne LED</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="panel" id="panel" />
-                    <Label htmlFor="panel" className="cursor-pointer">Panneau Rétroéclairé</Label>
-                  </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="relief" id="relief" />
                     <Label htmlFor="relief" className="cursor-pointer">Lettre Relief</Label>
