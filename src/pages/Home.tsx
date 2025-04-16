@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronRight, Check } from "lucide-react";
@@ -156,7 +157,7 @@ const Home = () => {
               </p>
               
               <div className="space-y-4">
-                {["Créations 100% personnalisées selon vos besoins", "Qualité supérieure et matériaux durables", "Suivi et maintenance de vos enseignes"].map((item, index) => <div key={index} className="flex items-start">
+                {["Créations 100% personnalisées selon vos besoins", "Qualité supérieure et matériaux durables"].map((item, index) => <div key={index} className="flex items-start">
                     <div className="mr-3 mt-1">
                       <Check size={18} className="text-neon-blue" />
                     </div>
@@ -209,4 +210,5 @@ const Home = () => {
       </section>
     </div>;
 };
+
 export default Home;
