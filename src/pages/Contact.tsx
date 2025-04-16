@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -10,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
-// Form schema definition
 const contactFormSchema = z.object({
   name: z.string().min(2, "Le nom doit comporter au moins 2 caractères"),
   email: z.string().email("L'e-mail doit être valide"),
@@ -32,11 +30,9 @@ const Contact = () => {
     resolver: zodResolver(contactFormSchema)
   });
   
-  // Handle form submission
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     
-    // Simulate API call with a timeout
     setTimeout(() => {
       console.log("Contact form data submitted:", data);
       toast.success("Votre message a été envoyé avec succès !", {
@@ -49,7 +45,6 @@ const Contact = () => {
 
   return (
     <div className="pt-24 pb-20">
-      {/* Contact Header */}
       <section className="relative py-16 mb-12 bg-gradient-to-b from-secondary to-black">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center neon-text">Contact</h1>
@@ -59,10 +54,8 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Content */}
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
           <div className="bg-secondary rounded-xl p-6 md:p-10">
             <h2 className="text-2xl font-bold mb-6">Envoyez-nous un message</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -131,7 +124,6 @@ const Contact = () => {
             </form>
           </div>
 
-          {/* Contact Information */}
           <div className="space-y-10">
             <div>
               <h2 className="text-2xl font-bold mb-6">Informations de contact</h2>
@@ -152,7 +144,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-medium mb-1">Email</h3>
-                    <p className="text-gray-300">info@nkagency.com</p>
+                    <p className="text-gray-300">nkagency63@gmail.com</p>
                   </div>
                 </div>
 
@@ -178,13 +170,11 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Map */}
             <div>
               <h2 className="text-2xl font-bold mb-6">Nous trouver</h2>
               <div className="w-full h-[300px] rounded-xl overflow-hidden bg-secondary">
                 <div className="w-full h-full bg-secondary flex items-center justify-center">
                   <p className="text-gray-400">Carte interactive indisponible</p>
-                  {/* In a real implementation, you would add a Google Maps or other map provider iframe here */}
                 </div>
               </div>
             </div>
@@ -192,7 +182,6 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* FAQ Section */}
       <section className="py-20 mt-16 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
