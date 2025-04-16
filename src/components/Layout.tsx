@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -28,7 +27,6 @@ const Layout = () => {
   }, [location.pathname]);
 
   return <div className="flex flex-col min-h-screen bg-background">
-      {/* Header */}
       <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-black bg-opacity-80 backdrop-blur-sm py-3' : 'bg-transparent py-5'}`}>
         <div className="container mx-auto flex justify-between items-center px-4">
           <Link to="/" className="flex items-center">
@@ -40,7 +38,6 @@ const Layout = () => {
             </div>
           </Link>
 
-          {/* Desktop Menu */}
           <nav className="hidden md:flex space-x-8">
             {[{
             name: 'Accueil',
@@ -62,13 +59,11 @@ const Layout = () => {
               </Link>)}
           </nav>
 
-          {/* Mobile Menu Button */}
           <button className="md:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {mobileMenuOpen && <div className="md:hidden absolute top-full left-0 right-0 bg-black bg-opacity-95 backdrop-blur-sm">
             <nav className="flex flex-col px-4 py-6 space-y-6">
               {[{
@@ -93,12 +88,10 @@ const Layout = () => {
           </div>}
       </header>
 
-      {/* Main Content */}
       <main className="flex-grow">
         <Outlet />
       </main>
 
-      {/* Footer */}
       <footer className="bg-black py-12 border-t border-gray-800">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -151,7 +144,7 @@ const Layout = () => {
               <ul className="space-y-2 text-gray-400">
                 <li>2bis avenue Édouard Herriot, 63800 COURNON-D'AUVERGNE</li>
                 <li>info@nkagency.com</li>
-                <li>+33 (0)1 23 45 67 89</li>
+                <li>+33 (0)6 35 42 13 59</li>
               </ul>
             </div>
           </div>
