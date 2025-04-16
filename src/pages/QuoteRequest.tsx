@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -17,7 +18,7 @@ const quoteFormSchema = z.object({
   email: z.string().email("L'e-mail doit être valide"),
   phone: z.string().min(10, "Le numéro de téléphone doit comporter au moins 10 caractères"),
   company: z.string().optional(),
-  signType: z.enum(["neon", "letters", "cabinet", "led", "panel", "other"], {
+  signType: z.enum(["neon", "letters", "cabinet", "led", "panel", "relief", "ledLetters", "other"], {
     required_error: "Veuillez sélectionner un type d'enseigne",
   }),
   otherType: z.string().optional(),
@@ -197,6 +198,14 @@ const QuoteRequest = () => {
                     <Label htmlFor="panel" className="cursor-pointer">Panneau Rétroéclairé</Label>
                   </div>
                   <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="relief" id="relief" />
+                    <Label htmlFor="relief" className="cursor-pointer">Lettre Relief</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="ledLetters" id="ledLetters" />
+                    <Label htmlFor="ledLetters" className="cursor-pointer">Lettre LED</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
                     <RadioGroupItem value="other" id="other" />
                     <Label htmlFor="other" className="cursor-pointer">Autre</Label>
                   </div>
@@ -205,6 +214,24 @@ const QuoteRequest = () => {
                   <p className="text-red-500 text-sm">{errors.signType.message}</p>
                 )}
               </div>
+
+              {watchSignType === "relief" && (
+                <div className="md:col-span-2 p-4 bg-gray-800 rounded-md">
+                  <p className="text-gray-300 mb-2 font-medium">Lettre Relief</p>
+                  <p className="text-gray-400 text-sm">
+                    Découpe de lettres et logos sur mesure en PVC, ALU, plexiglas et bois MDF.
+                  </p>
+                </div>
+              )}
+
+              {watchSignType === "ledLetters" && (
+                <div className="md:col-span-2 p-4 bg-gray-800 rounded-md">
+                  <p className="text-gray-300 mb-2 font-medium">Lettre LED</p>
+                  <p className="text-gray-400 text-sm">
+                    Découpes et usinage de lettres lumineuses rétro éclairées, boitier PVC ou aluminium et bloc led.
+                  </p>
+                </div>
+              )}
 
               {showOtherType && (
                 <div className="md:col-span-2 space-y-2">
