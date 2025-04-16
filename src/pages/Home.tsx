@@ -144,7 +144,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* Why Choose Us Section */}
       <section className="py-20 bg-black">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -156,7 +156,7 @@ const Home = () => {
               </p>
               
               <div className="space-y-4">
-                {["Plus de 10 ans d'expérience dans le domaine", "Créations 100% personnalisées selon vos besoins", "Qualité supérieure et matériaux durables", "Suivi et maintenance de vos enseignes"].map((item, index) => <div key={index} className="flex items-start">
+                {["Créations 100% personnalisées selon vos besoins", "Qualité supérieure et matériaux durables", "Suivi et maintenance de vos enseignes"].map((item, index) => <div key={index} className="flex items-start">
                     <div className="mr-3 mt-1">
                       <Check size={18} className="text-neon-blue" />
                     </div>
