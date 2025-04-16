@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronRight, Check } from "lucide-react";
-
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
   return <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -23,7 +21,7 @@ const Home = () => {
           
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 text-white leading-tight">
-              Des Enseignes <span className="neon-text-blue">Lumineuses</span><br />
+              Des Enseignes <span className="neon-text-blue"></span><br />
               Qui Font <span className="neon-text-pink">Briller</span> Votre Marque
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mb-8">
@@ -209,5 +207,4 @@ const Home = () => {
       </section>
     </div>;
 };
-
 export default Home;
