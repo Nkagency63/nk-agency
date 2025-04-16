@@ -73,8 +73,8 @@ const Home = () => {
             description: "Installation professionnelle et service de maintenance pour assurer la longévité et la sécurité de vos enseignes.",
             color: "neon-text-yellow"
           }].map((service, index) => <div key={index} className="bg-secondary rounded-xl p-8 border border-gray-800 hover:border-gray-700 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-white/5">
-                <h3 className={`text-2xl font-bold mb-4 ${service.color}`}>{service.title}</h3>
-                <p className="text-gray-400 mb-6">{service.description}</p>
+                <h3 className="">{service.title}</h3>
+                <p className="text-gray-400 mb-6 text-base">{service.description}</p>
                 <Link to="/services" className="inline-flex items-center text-white hover:underline">
                   En savoir plus
                   <ChevronRight size={16} className="ml-1" />
