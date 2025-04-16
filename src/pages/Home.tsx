@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronRight, Check } from "lucide-react";
+
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
   return <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -154,12 +156,14 @@ const Home = () => {
               </p>
               
               <div className="space-y-4">
-                {["Créations 100% personnalisées selon vos besoins", "Qualité supérieure et matériaux durables"].map((item, index) => <div key={index} className="flex items-start">
+                {["Créations 100% personnalisées selon vos besoins"].map((item, index) => (
+                  <div key={index} className="flex items-start">
                     <div className="mr-3 mt-1">
                       <Check size={18} className="text-neon-blue" />
                     </div>
                     <p className="text-gray-300">{item}</p>
-                  </div>)}
+                  </div>
+                ))}
               </div>
               
               <div className="mt-10">
@@ -207,4 +211,5 @@ const Home = () => {
       </section>
     </div>;
 };
+
 export default Home;
