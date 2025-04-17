@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -10,34 +11,34 @@ interface ProjectItem {
 const FeaturedProjects = () => {
   const projects: ProjectItem[] = [
     {
-      title: "Enseigne Lumineuse Natural Pizza",
-      category: "Panneau Lumineux",
-      imageUrl: "/lovable-uploads/4908cacc-6343-4bd3-9f30-40e22f1a1cdf.png"
+      title: "Café Le Parisien",
+      category: "Enseigne Néon",
+      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/enseigne-boutique-lumineuse-panneau-habillage-local-commerce-vitre.jpg"
     }, 
     {
-      title: "Devanture Lali Nails",
-      category: "Façade Commerciale",
-      imageUrl: "/lovable-uploads/40aae748-4757-4610-b7fd-026541731971.png"
+      title: "Boutique Élégance",
+      category: "Lettres Lumineuses",
+      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/pharmacie-enseigne-croix-verte.jpg"
     }, 
     {
-      title: "Lettres en Relief KATYPRK",
-      category: "Lettres Découpées",
-      imageUrl: "/lovable-uploads/e2167189-771e-44c1-a3b1-af039da6e1b7.png"
+      title: "Restaurant Saveur",
+      category: "Caisson Lumineux",
+      imageUrl: "https://enseigne42.com/sites/default/files/2023-11/Enseigne-lumineuse-casino-jeux-lyon-scaled.jpg"
     }, 
     {
-      title: "Lettre Lumineuse N",
+      title: "Bar Nocturne",
       category: "Enseigne LED",
-      imageUrl: "/lovable-uploads/cb7ceca3-1ed5-4812-b68f-b076b95a055e.png"
+      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/fabricant-totem-lumineux-enseigne.jpg"
     }, 
     {
-      title: "Lettre Lumineuse E",
-      category: "Lettre Boîtier LED",
-      imageUrl: "/lovable-uploads/5d70ddbf-4648-4d48-a487-2654449c895b.png"
+      title: "Club Vibration",
+      category: "Enseigne Néon",
+      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/signalisation-lieux-enseignes-travaux.jpg"
     }, 
     {
-      title: "Enseigne Lumineuse TAO",
-      category: "Panneau Lumineux",
-      imageUrl: "/lovable-uploads/1ba9f711-5de9-4fd7-ba34-d170b0828582.png"
+      title: "Galerie d'Art Moderne",
+      category: "Lettres Découpées",
+      imageUrl: "https://enseigne42.com/sites/default/files/2021-12/installation-totem-enseigne-pvc-habillage-devanture-magasin.jpg"
     }
   ];
 
