@@ -13,32 +13,32 @@ const FeaturedProjects = () => {
     {
       title: "Café Le Parisien",
       category: "Enseigne Néon",
-      imageUrl: "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&q=80&w=1000"
+      imageUrl: "https://enseigne42.com/sites/default/files/2024-03/Pose-enseigne-lumineuse-double-face-neoshine-light.jpg"
     }, 
     {
       title: "Boutique Élégance",
       category: "Lettres Lumineuses",
-      imageUrl: "https://images.unsplash.com/photo-1533779283484-8ad4940aa3a8?auto=format&fit=crop&q=80&w=1000"
+      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/realisation-enseigne-lumineuse.jpg"
     }, 
     {
       title: "Restaurant Saveur",
       category: "Caisson Lumineux",
-      imageUrl: "https://images.unsplash.com/photo-1563620915-a8e473771545?auto=format&fit=crop&q=80&w=1000"
+      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/restaurant-enseigne-travaux-enseigniste.jpg"
     }, 
     {
       title: "Bar Nocturne",
       category: "Enseigne LED",
-      imageUrl: "https://images.unsplash.com/photo-1515268064940-5750c4be46ce?auto=format&fit=crop&q=80&w=1000"
+      imageUrl: "https://enseigne42.com/sites/default/files/2024-03/Enseigne-lumineuse-neon-led-realisation-enseigne42.jpg"
     }, 
     {
       title: "Club Vibration",
       category: "Enseigne Néon",
-      imageUrl: "https://images.unsplash.com/photo-1563842431151-15af97dd17c4?auto=format&fit=crop&q=80&w=1000"
+      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/entreprise-fabrication-enseigne-publiticaire-lyon.jpg"
     }, 
     {
       title: "Galerie d'Art Moderne",
       category: "Lettres Découpées",
-      imageUrl: "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=1000"
+      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/signalisation-lieux-enseignes-travaux.jpg"
     }
   ];
 
