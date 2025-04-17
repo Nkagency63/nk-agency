@@ -50,46 +50,6 @@ export const portfolioItems: PortfolioItem[] = [
     category: "Lettre Boîtier LED",
     image: "/lovable-uploads/85087f6e-46dd-4e75-98db-12c0a34adaca.png",
     description: "Lettre boîtier lumineuse en forme de 'E' avec éclairage LED intégré, face blanche illuminée pour un effet visuel saisissant de jour comme de nuit."
-  },
-  {
-    id: 8,
-    title: "Enseigne LED Shop",
-    client: "Digital Shop",
-    category: "LED",
-    image: "https://enseigne42.com/sites/default/files/2022-01/fabricant-totem-lumineux-enseigne.jpg",
-    description: "Enseigne LED avec animation programmable pour une boutique d'électronique."
-  },
-  {
-    id: 9,
-    title: "Enseigne Néon Salon",
-    client: "Beauty Salon",
-    category: "Néon",
-    image: "https://enseigne42.com/sites/default/files/2022-01/enseigne-boutique-lumineuse-panneau-habillage-local-commerce-vitre.jpg",
-    description: "Enseigne néon rose sur mesure pour un salon de beauté."
-  },
-  {
-    id: 10,
-    title: "Lettres 3D Pharmacie",
-    client: "Pharmacie Centrale",
-    category: "Lettres 3D",
-    image: "https://enseigne42.com/sites/default/files/2022-01/pharmacie-enseigne-croix-verte.jpg",
-    description: "Lettres 3D avec éclairage LED vert pour une pharmacie."
-  },
-  {
-    id: 11,
-    title: "Panneau Lumineux Cinéma",
-    client: "Cinéma Paradis",
-    category: "Panneau Lumineux",
-    image: "https://enseigne42.com/sites/default/files/2022-01/enseigne-lumineuse-devanture-commerce.jpg",
-    description: "Panneau lumineux avec affichage programmable pour un cinéma."
-  },
-  {
-    id: 12,
-    title: "Enseigne Néon Club",
-    client: "Club Vibration",
-    category: "Néon",
-    image: "https://enseigne42.com/sites/default/files/2023-11/Enseigne-lumineuse-casino-jeux-lyon-scaled.jpg",
-    description: "Enseigne néon de couleur rose avec animation pour un club de nuit."
   }
 ];
 
