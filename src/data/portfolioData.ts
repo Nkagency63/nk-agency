@@ -52,14 +52,6 @@ export const portfolioItems: PortfolioItem[] = [
     description: "Lettre boîtier lumineuse en forme de 'E' avec éclairage LED intégré, face blanche illuminée pour un effet visuel saisissant de jour comme de nuit."
   },
   {
-    id: 7,
-    title: "Enseigne Lumineuse Natural Pizza",
-    client: "Natural Pizza",
-    category: "Panneau Lumineux",
-    image: "/lovable-uploads/4908cacc-6343-4bd3-9f30-40e22f1a1cdf.png",
-    description: "Enseigne ronde lumineuse avec logo Natural Pizza en relief, couleur rouge vif avec lettrage blanc et détail de feuille verte."
-  },
-  {
     id: 8,
     title: "Enseigne LED Shop",
     client: "Digital Shop",
