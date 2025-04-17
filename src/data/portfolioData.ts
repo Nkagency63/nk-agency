@@ -45,6 +45,14 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 6,
+    title: "Enseigne Lumineuse TAO",
+    client: "TAO Asian Street Food",
+    category: "Panneau Lumineux",
+    image: "/lovable-uploads/1ba9f711-5de9-4fd7-ba34-d170b0828582.png",
+    description: "Enseigne lumineuse pour restaurant asiatique avec logo TAO en lettrage noir sur fond blanc et sous-titre vert 'ASIAN STREET FOOD - Wok & Sushi'."
+  },
+  {
+    id: 7,
     title: "Enseigne Néon Club",
     client: "Club Vibration",
     category: "Néon",
@@ -52,7 +60,7 @@ export const portfolioItems: PortfolioItem[] = [
     description: "Enseigne néon de couleur rose avec animation pour un club de nuit."
   },
   {
-    id: 7,
+    id: 8,
     title: "Lettres Découpées Galerie",
     client: "Galerie d'Art Moderne",
     category: "Lettres Découpées",
@@ -60,7 +68,7 @@ export const portfolioItems: PortfolioItem[] = [
     description: "Lettres découpées en métal brossé pour une galerie d'art contemporain."
   },
   {
-    id: 8,
+    id: 9,
     title: "Panneau Rétroéclairé Hôtel",
     client: "Hôtel Luxe",
     category: "Panneau Rétroéclairé",
@@ -68,7 +76,7 @@ export const portfolioItems: PortfolioItem[] = [
     description: "Panneau rétroéclairé avec logo en relief pour un hôtel de luxe."
   },
   {
-    id: 9,
+    id: 10,
     title: "Enseigne LED Shop",
     client: "Digital Shop",
     category: "LED",
@@ -76,7 +84,7 @@ export const portfolioItems: PortfolioItem[] = [
     description: "Enseigne LED avec animation programmable pour une boutique d'électronique."
   },
   {
-    id: 10,
+    id: 11,
     title: "Enseigne Néon Salon",
     client: "Beauty Salon",
     category: "Néon",
@@ -84,7 +92,7 @@ export const portfolioItems: PortfolioItem[] = [
     description: "Enseigne néon rose sur mesure pour un salon de beauté."
   },
   {
-    id: 11,
+    id: 12,
     title: "Lettres 3D Pharmacie",
     client: "Pharmacie Centrale",
     category: "Lettres 3D",
@@ -92,7 +100,7 @@ export const portfolioItems: PortfolioItem[] = [
     description: "Lettres 3D avec éclairage LED vert pour une pharmacie."
   },
   {
-    id: 12,
+    id: 13,
     title: "Panneau Lumineux Cinéma",
     client: "Cinéma Paradis",
     category: "Panneau Lumineux",

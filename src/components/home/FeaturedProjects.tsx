@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -36,9 +35,9 @@ const FeaturedProjects = () => {
       imageUrl: "/lovable-uploads/5d70ddbf-4648-4d48-a487-2654449c895b.png"
     }, 
     {
-      title: "Enseigne Néon Club",
-      category: "Enseigne Néon",
-      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/enseigne-boutique-lumineuse-panneau-habillage-local-commerce-vitre.jpg"
+      title: "Enseigne Lumineuse TAO",
+      category: "Panneau Lumineux",
+      imageUrl: "/lovable-uploads/1ba9f711-5de9-4fd7-ba34-d170b0828582.png"
     }
   ];
 
