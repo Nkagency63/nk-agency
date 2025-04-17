@@ -11,34 +11,34 @@ interface ProjectItem {
 const FeaturedProjects = () => {
   const projects: ProjectItem[] = [
     {
-      title: "Café Le Parisien",
-      category: "Enseigne Néon",
-      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/enseigne-boutique-lumineuse-panneau-habillage-local-commerce-vitre.jpg"
+      title: "Lali Nails",
+      category: "Façade Commerciale",
+      imageUrl: "/lovable-uploads/28cfe60f-7204-4fa7-8e75-5ee4dfef079e.png"
     }, 
     {
-      title: "Boutique Élégance",
-      category: "Lettres Lumineuses",
-      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/pharmacie-enseigne-croix-verte.jpg"
-    }, 
-    {
-      title: "Restaurant Saveur",
-      category: "Caisson Lumineux",
-      imageUrl: "https://enseigne42.com/sites/default/files/2023-11/Enseigne-lumineuse-casino-jeux-lyon-scaled.jpg"
-    }, 
-    {
-      title: "Bar Nocturne",
-      category: "Enseigne LED",
-      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/fabricant-totem-lumineux-enseigne.jpg"
-    }, 
-    {
-      title: "Club Vibration",
-      category: "Enseigne Néon",
-      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/signalisation-lieux-enseignes-travaux.jpg"
-    }, 
-    {
-      title: "Galerie d'Art Moderne",
+      title: "KATYPRK",
       category: "Lettres Découpées",
-      imageUrl: "https://enseigne42.com/sites/default/files/2021-12/installation-totem-enseigne-pvc-habillage-devanture-magasin.jpg"
+      imageUrl: "/lovable-uploads/a12f4f81-e7d3-47e0-9240-d22bea7f2bf2.png"
+    }, 
+    {
+      title: "CHOU'KETTE",
+      category: "Façade Commerciale",
+      imageUrl: "/lovable-uploads/2ffc53f8-2966-4d49-bf52-68d3086d1d0b.png"
+    }, 
+    {
+      title: "TAO Asian Street Food",
+      category: "Caisson Lumineux",
+      imageUrl: "/lovable-uploads/5cb57967-e822-4b52-8281-28c197167c7b.png"
+    }, 
+    {
+      title: "Lettre Lumineuse N",
+      category: "Lettre Boîtier LED",
+      imageUrl: "/lovable-uploads/a8bca416-eb12-4ff0-a5f1-677b854871a1.png"
+    }, 
+    {
+      title: "Lettre Lumineuse E",
+      category: "Lettre Boîtier LED",
+      imageUrl: "/lovable-uploads/85087f6e-46dd-4e75-98db-12c0a34adaca.png"
     }
   ];
 
