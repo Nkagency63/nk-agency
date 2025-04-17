@@ -13,32 +13,32 @@ const FeaturedProjects = () => {
     {
       title: "Café Le Parisien",
       category: "Enseigne Néon",
-      imageUrl: "https://enseigne42.com/sites/default/files/2024-03/Pose-enseigne-lumineuse-double-face-neoshine-light.jpg"
+      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/enseigne-boutique-lumineuse-panneau-habillage-local-commerce-vitre.jpg"
     }, 
     {
       title: "Boutique Élégance",
       category: "Lettres Lumineuses",
-      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/realisation-enseigne-lumineuse.jpg"
+      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/pharmacie-enseigne-croix-verte.jpg"
     }, 
     {
       title: "Restaurant Saveur",
       category: "Caisson Lumineux",
-      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/restaurant-enseigne-travaux-enseigniste.jpg"
+      imageUrl: "https://enseigne42.com/sites/default/files/2023-11/Enseigne-lumineuse-casino-jeux-lyon-scaled.jpg"
     }, 
     {
       title: "Bar Nocturne",
       category: "Enseigne LED",
-      imageUrl: "https://enseigne42.com/sites/default/files/2024-03/Enseigne-lumineuse-neon-led-realisation-enseigne42.jpg"
+      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/fabricant-totem-lumineux-enseigne.jpg"
     }, 
     {
       title: "Club Vibration",
       category: "Enseigne Néon",
-      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/entreprise-fabrication-enseigne-publiticaire-lyon.jpg"
+      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/signalisation-lieux-enseignes-travaux.jpg"
     }, 
     {
       title: "Galerie d'Art Moderne",
       category: "Lettres Découpées",
-      imageUrl: "https://enseigne42.com/sites/default/files/2022-01/signalisation-lieux-enseignes-travaux.jpg"
+      imageUrl: "https://enseigne42.com/sites/default/files/2021-12/installation-totem-enseigne-pvc-habillage-devanture-magasin.jpg"
     }
   ];
 
