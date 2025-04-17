@@ -1,42 +1,50 @@
 
 import { PortfolioItem } from "../types/portfolio";
 
-// Portfolio data with images from enseigne42.com
+// Portfolio data with updated images
 export const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
-    title: "Enseigne Néon Café Élégant",
-    client: "Café Le Parisien",
-    category: "Néon",
-    image: "https://enseigne42.com/sites/default/files/2024-03/Pose-enseigne-lumineuse-double-face-neoshine-light.jpg",
-    description: "Enseigne néon rouge et blanche pour un café parisien classique avec un design vintage."
+    title: "Enseigne Lumineuse Natural Pizza",
+    client: "Natural Pizza",
+    category: "Panneau Lumineux",
+    image: "/lovable-uploads/4908cacc-6343-4bd3-9f30-40e22f1a1cdf.png",
+    description: "Enseigne ronde lumineuse avec logo Natural Pizza en relief, couleur rouge vif avec lettrage blanc et détail de feuille verte."
   },
   {
     id: 2,
-    title: "Lettres Lumineuses Boutique",
-    client: "Élégance Mode",
-    category: "Lettres Lumineuses",
-    image: "https://enseigne42.com/sites/default/files/2022-01/realisation-enseigne-lumineuse.jpg",
-    description: "Lettres lumineuses blanches pour une boutique de mode haut de gamme."
+    title: "Devanture Lali Nails",
+    client: "Lali Nails",
+    category: "Façade Commerciale",
+    image: "/lovable-uploads/40aae748-4757-4610-b7fd-026541731971.png",
+    description: "Façade complète pour salon de beauté avec enseigne lumineuse et logo personnalisé sur fond noir."
   },
   {
     id: 3,
-    title: "Caisson Lumineux Restaurant",
-    client: "Restaurant Saveur",
-    category: "Caisson Lumineux",
-    image: "https://enseigne42.com/sites/default/files/2022-01/restaurant-enseigne-travaux-enseigniste.jpg",
-    description: "Caisson lumineux rétroéclairé avec logo personnalisé pour un restaurant gastronomique."
+    title: "Lettres en Relief KATYPRK",
+    client: "KATYPRK",
+    category: "Lettres Découpées",
+    image: "/lovable-uploads/e2167189-771e-44c1-a3b1-af039da6e1b7.png",
+    description: "Enseigne en relief avec lettres blanches découpées sur caisson noir pour une visibilité optimale."
   },
   {
     id: 4,
-    title: "Enseigne LED Bar Nocturne",
-    client: "Bar Nocturne",
-    category: "LED",
-    image: "https://enseigne42.com/sites/default/files/2024-03/Enseigne-lumineuse-neon-led-realisation-enseigne42.jpg",
-    description: "Enseigne LED moderne avec éclairage changeant pour un bar tendance."
+    title: "Lettre Lumineuse N",
+    client: "Design Concept",
+    category: "Lettre Boîtier LED",
+    image: "/lovable-uploads/cb7ceca3-1ed5-4812-b68f-b076b95a055e.png",
+    description: "Lettre boîtier lumineuse en forme de 'N' avec éclairage LED intégré, face noire et contour blanc lumineux."
   },
   {
     id: 5,
+    title: "Lettre Lumineuse E",
+    client: "Design Concept",
+    category: "Lettre Boîtier LED",
+    image: "/lovable-uploads/5d70ddbf-4648-4d48-a487-2654449c895b.png",
+    description: "Lettre boîtier lumineuse en forme de 'E' avec éclairage LED intégré, face blanche illuminée pour une visibilité maximale."
+  },
+  {
+    id: 6,
     title: "Enseigne Néon Club",
     client: "Club Vibration",
     category: "Néon",
@@ -44,7 +52,7 @@ export const portfolioItems: PortfolioItem[] = [
     description: "Enseigne néon de couleur rose avec animation pour un club de nuit."
   },
   {
-    id: 6,
+    id: 7,
     title: "Lettres Découpées Galerie",
     client: "Galerie d'Art Moderne",
     category: "Lettres Découpées",
@@ -52,7 +60,7 @@ export const portfolioItems: PortfolioItem[] = [
     description: "Lettres découpées en métal brossé pour une galerie d'art contemporain."
   },
   {
-    id: 7,
+    id: 8,
     title: "Panneau Rétroéclairé Hôtel",
     client: "Hôtel Luxe",
     category: "Panneau Rétroéclairé",
@@ -60,7 +68,7 @@ export const portfolioItems: PortfolioItem[] = [
     description: "Panneau rétroéclairé avec logo en relief pour un hôtel de luxe."
   },
   {
-    id: 8,
+    id: 9,
     title: "Enseigne LED Shop",
     client: "Digital Shop",
     category: "LED",
@@ -68,7 +76,7 @@ export const portfolioItems: PortfolioItem[] = [
     description: "Enseigne LED avec animation programmable pour une boutique d'électronique."
   },
   {
-    id: 9,
+    id: 10,
     title: "Enseigne Néon Salon",
     client: "Beauty Salon",
     category: "Néon",
@@ -76,7 +84,7 @@ export const portfolioItems: PortfolioItem[] = [
     description: "Enseigne néon rose sur mesure pour un salon de beauté."
   },
   {
-    id: 10,
+    id: 11,
     title: "Lettres 3D Pharmacie",
     client: "Pharmacie Centrale",
     category: "Lettres 3D",
@@ -84,20 +92,12 @@ export const portfolioItems: PortfolioItem[] = [
     description: "Lettres 3D avec éclairage LED vert pour une pharmacie."
   },
   {
-    id: 11,
+    id: 12,
     title: "Panneau Lumineux Cinéma",
     client: "Cinéma Paradis",
     category: "Panneau Lumineux",
     image: "https://enseigne42.com/sites/default/files/2022-01/enseigne-lumineuse-devanture-commerce.jpg",
     description: "Panneau lumineux avec affichage programmable pour un cinéma."
-  },
-  {
-    id: 12,
-    title: "Lettres Lumineuses Spa",
-    client: "Zen Spa",
-    category: "Lettres Lumineuses",
-    image: "https://enseigne42.com/sites/default/files/2021-12/installation-totem-enseigne-pvc-habillage-devanture-magasin.jpg",
-    description: "Lettres lumineuses avec effet de halo pour un spa de relaxation."
   }
 ];
 
