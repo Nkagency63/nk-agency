@@ -34,10 +34,10 @@ const Layout = () => {
               <img 
                 src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" 
                 alt="NK AGENCY Logo" 
-                className="h-16 mr-2" // Increased height from h-10 to h-16
+                className="h-16 mr-2"
               />
-              <div className="text-white text-2xl font-bold font-montserrat tracking-wider neon-text">
-                <span className="text-white text-base">AGENCY</span>
+              <div className="text-white text-3xl font-bold font-montserrat tracking-wider neon-text">
+                <span className="text-white text-xl">AGENCY</span>
               </div>
             </div>
           </Link>
@@ -104,9 +104,9 @@ const Layout = () => {
                 <img 
                   src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" 
                   alt="NK AGENCY Logo" 
-                  className="h-12 mr-2" // Increased height from h-8 to h-12
+                  className="h-12 mr-2"
                 />
-                <h3 className="text-xl font-bold text-white">
+                <h3 className="text-2xl font-bold text-white">
                   <span className="text-white">AGENCY</span>
                 </h3>
               </div>
