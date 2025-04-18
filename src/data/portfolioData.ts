@@ -1,4 +1,3 @@
-
 import { PortfolioItem } from "../types/portfolio";
 
 // Portfolio data with updated images
@@ -50,6 +49,14 @@ export const portfolioItems: PortfolioItem[] = [
     category: "Lettre Boîtier LED",
     image: "/lovable-uploads/85087f6e-46dd-4e75-98db-12c0a34adaca.png",
     description: "Lettre boîtier lumineuse en forme de 'E' avec éclairage LED intégré, face blanche illuminée pour un effet visuel saisissant de jour comme de nuit."
+  },
+  {
+    id: 7,
+    title: "Logo Fernandes en Relief",
+    client: "Fernandes",
+    category: "Lettres Découpées",
+    image: "/lovable-uploads/bad52d0a-bbf2-43b6-a893-14d026f283d5.png",
+    description: "Logo d'entreprise en relief avec lettres découpées et symbole rouge distinctif, installé dans une salle de réunion moderne avec finitions en bois."
   }
 ];
 
