@@ -31,7 +31,11 @@ const Layout = () => {
         <div className="container mx-auto flex justify-between items-center px-4">
           <Link to="/" className="flex items-center">
             <div className="flex items-center">
-              <img src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" alt="NK AGENCY Logo" className="h-10 mr-2" />
+              <img 
+                src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" 
+                alt="NK AGENCY Logo" 
+                className="h-16 mr-2" // Increased height from h-10 to h-16
+              />
               <div className="text-white text-2xl font-bold font-montserrat tracking-wider neon-text">
                 <span className="text-white text-base">AGENCY</span>
               </div>
@@ -97,7 +101,11 @@ const Layout = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             <div>
               <div className="flex items-center mb-4">
-                <img src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" alt="NK AGENCY Logo" className="h-8 mr-2" />
+                <img 
+                  src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" 
+                  alt="NK AGENCY Logo" 
+                  className="h-12 mr-2" // Increased height from h-8 to h-12
+                />
                 <h3 className="text-xl font-bold text-white">
                   <span className="text-white">AGENCY</span>
                 </h3>
