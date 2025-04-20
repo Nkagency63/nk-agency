@@ -29,7 +29,6 @@ const quoteFormSchema = z.object({
   }),
   description: z.string().min(10, "La description doit comporter au moins 10 caractères"),
   urgency: z.boolean().optional(),
-  installationRequired: z.boolean().optional(),
   termsAccepted: z.literal(true, {
     errorMap: () => ({ message: "Vous devez accepter les conditions" }),
   }),
@@ -53,7 +52,6 @@ const QuoteRequest = () => {
       signType: "relief",
       location: "exterior",
       urgency: false,
-      installationRequired: true,
       termsAccepted: true
     }
   });
@@ -312,17 +310,6 @@ const QuoteRequest = () => {
                 />
                 <div className="grid gap-1.5 leading-none">
                   <Label htmlFor="urgency" className="cursor-pointer">Projet urgent (délai &lt; 4 semaines)</Label>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-2">
-                <Checkbox 
-                  id="installationRequired" 
-                  defaultChecked={true}
-                  onClick={() => setValue("installationRequired", !watch("installationRequired"))}
-                />
-                <div className="grid gap-1.5 leading-none">
-                  <Label htmlFor="installationRequired" className="cursor-pointer">Installation par NK AGENCY requise</Label>
                 </div>
               </div>
 
