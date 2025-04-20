@@ -10,14 +10,13 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 
-// Update the form schema to remove the budget field
 const quoteFormSchema = z.object({
   firstName: z.string().min(2, "Le prénom doit comporter au moins 2 caractères"),
   lastName: z.string().min(2, "Le nom doit comporter au moins 2 caractères"),
   email: z.string().email("L'e-mail doit être valide"),
   phone: z.string().min(10, "Le numéro de téléphone doit comporter au moins 10 caractères"),
   company: z.string().optional(),
-  signType: z.enum(["relief", "ledLetters", "other"], {
+  signType: z.enum(["relief", "ledLetters", "flag", "neon", "other"], {
     required_error: "Veuillez sélectionner un type d'enseigne",
   }),
   otherType: z.string().optional(),
@@ -58,11 +57,9 @@ const QuoteRequest = () => {
 
   const watchSignType = watch("signType");
   
-  // Handle form submission
   const onSubmit = async (data: QuoteFormData) => {
     setIsSubmitting(true);
     
-    // Simulate API call with a timeout
     setTimeout(() => {
       console.log("Form data submitted:", data);
       toast.success("Votre demande de devis a été envoyée avec succès !", {
@@ -74,7 +71,6 @@ const QuoteRequest = () => {
 
   return (
     <div className="pt-24 pb-20">
-      {/* Quote Request Header */}
       <section className="relative py-16 mb-12 bg-gradient-to-b from-secondary to-black">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center neon-text">
@@ -86,12 +82,10 @@ const QuoteRequest = () => {
         </div>
       </section>
 
-      {/* Quote Request Form */}
       <div className="container mx-auto px-4">
         <div className="bg-secondary rounded-xl p-6 md:p-10 max-w-4xl mx-auto">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Personal Information */}
               <div className="md:col-span-2">
                 <h2 className="text-2xl font-bold mb-4">Informations Personnelles</h2>
               </div>
@@ -158,7 +152,6 @@ const QuoteRequest = () => {
                 />
               </div>
 
-              {/* Project Information */}
               <div className="md:col-span-2 mt-6">
                 <h2 className="text-2xl font-bold mb-4">Informations sur le Projet</h2>
               </div>
@@ -180,6 +173,14 @@ const QuoteRequest = () => {
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="ledLetters" id="ledLetters" />
                     <Label htmlFor="ledLetters" className="cursor-pointer">Lettre LED</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="flag" id="flag" />
+                    <Label htmlFor="flag" className="cursor-pointer">Enseigne Drapeau</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="neon" id="neon" />
+                    <Label htmlFor="neon" className="cursor-pointer">Néon Personnalisable</Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="other" id="other" />
