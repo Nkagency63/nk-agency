@@ -1,5 +1,4 @@
-
-import { useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -11,7 +10,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 
-// Update the form schema to only include the specified sign types
+// Update the form schema to remove the budget field
 const quoteFormSchema = z.object({
   firstName: z.string().min(2, "Le prénom doit comporter au moins 2 caractères"),
   lastName: z.string().min(2, "Le nom doit comporter au moins 2 caractères"),
@@ -29,7 +28,6 @@ const quoteFormSchema = z.object({
     required_error: "Veuillez indiquer l'emplacement",
   }),
   description: z.string().min(10, "La description doit comporter au moins 10 caractères"),
-  budget: z.enum(["under1000", "1000to3000", "3000to5000", "5000to10000", "over10000"]),
   urgency: z.boolean().optional(),
   installationRequired: z.boolean().optional(),
   termsAccepted: z.literal(true, {
@@ -54,7 +52,6 @@ const QuoteRequest = () => {
     defaultValues: {
       signType: "relief",
       location: "exterior",
-      budget: "1000to3000",
       urgency: false,
       installationRequired: true,
       termsAccepted: true
@@ -305,41 +302,6 @@ const QuoteRequest = () => {
                 />
                 {errors.description && (
                   <p className="text-red-500 text-sm">{errors.description.message}</p>
-                )}
-              </div>
-
-              <div className="md:col-span-2 space-y-3">
-                <Label>Budget estimé *</Label>
-                <RadioGroup 
-                  defaultValue="1000to3000"
-                  className="grid grid-cols-2 md:grid-cols-3 gap-2"
-                  onValueChange={(value) => {
-                    setValue("budget", value as any);
-                  }}
-                >
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="under1000" id="under1000" />
-                    <Label htmlFor="under1000" className="cursor-pointer">Moins de 1 000 €</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="1000to3000" id="1000to3000" />
-                    <Label htmlFor="1000to3000" className="cursor-pointer">1 000 € - 3 000 €</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="3000to5000" id="3000to5000" />
-                    <Label htmlFor="3000to5000" className="cursor-pointer">3 000 € - 5 000 €</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="5000to10000" id="5000to10000" />
-                    <Label htmlFor="5000to10000" className="cursor-pointer">5 000 € - 10 000 €</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="over10000" id="over10000" />
-                    <Label htmlFor="over10000" className="cursor-pointer">Plus de 10 000 €</Label>
-                  </div>
-                </RadioGroup>
-                {errors.budget && (
-                  <p className="text-red-500 text-sm">{errors.budget.message}</p>
                 )}
               </div>
 
