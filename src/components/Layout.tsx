@@ -32,7 +32,7 @@ const Layout = () => {
           <Link to="/" className="flex items-center">
             <div className="flex items-center">
               <img 
-                src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" 
+                src="/lovable-uploads/d7ce3e30-c5f8-4734-b717-c9ee4a495afc.png" 
                 alt="NK AGENCY Logo" 
                 className="h-16 mr-2"
               />
@@ -102,7 +102,7 @@ const Layout = () => {
             <div>
               <div className="flex items-center mb-4">
                 <img 
-                  src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" 
+                  src="/lovable-uploads/d7ce3e30-c5f8-4734-b717-c9ee4a495afc.png" 
                   alt="NK AGENCY Logo" 
                   className="h-12 mr-2"
                 />

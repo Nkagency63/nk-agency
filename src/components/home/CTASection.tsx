@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -8,7 +7,7 @@ const CTASection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <div className="flex justify-center mb-6">
-            <img src="/lovable-uploads/f3ed4c91-dfb6-47c8-b017-6a1414937753.png" alt="NK AGENCY Logo" className="h-16" />
+            <img src="/lovable-uploads/d7ce3e30-c5f8-4734-b717-c9ee4a495afc.png" alt="NK AGENCY Logo" className="h-16" />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6 neon-text">Prêt à Illuminer Votre Marque ?</h2>
           <p className="text-xl text-gray-300 mb-10">
