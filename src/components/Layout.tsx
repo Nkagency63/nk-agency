@@ -151,7 +151,7 @@ const Layout = () => {
               <h3 className="text-xl font-bold mb-4 text-white">Contact</h3>
               <ul className="space-y-2 text-gray-400">
                 <li>2bis avenue Édouard Herriot, 63800 COURNON-D'AUVERGNE</li>
-                <li>info@nkagency.com</li>
+                <li>nkagency63@gmail.com</li>
                 <li>+33 (0)6 35 42 13 59</li>
               </ul>
             </div>
