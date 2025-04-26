@@ -195,7 +195,7 @@ const Contact = () => {
             {[
               {
                 question: "Quel est le délai de réalisation pour une enseigne ?",
-                answer: "Le délai dépend du type et de la complexité de l'enseigne. En général, il faut compter 2 à 4 semaines pour une enseigne standard, et 4 à 8 semaines pour des projets plus complexes ou sur mesure."
+                answer: "Le délai dépend du type et de la complexité de l'enseigne. En général, il faut compter 1 à 2 semaines pour une enseigne standard, et 2 à 3 semaines pour des projets plus complexes ou sur mesure."
               },
               {
                 question: "Proposez-vous des services d'installation dans toute la France ?",
