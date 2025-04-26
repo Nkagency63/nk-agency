@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -196,10 +197,6 @@ const Contact = () => {
               {
                 question: "Quel est le délai de réalisation pour une enseigne ?",
                 answer: "Le délai dépend du type et de la complexité de l'enseigne. En général, il faut compter 1 à 2 semaines pour une enseigne standard, et 2 à 3 semaines pour des projets plus complexes ou sur mesure."
-              },
-              {
-                question: "Proposez-vous des services d'installation dans toute la France ?",
-                answer: "Oui, nous proposons des services d'installation partout en France métropolitaine. Notre équipe de techniciens certifiés se déplace pour assurer une installation professionnelle et conforme aux normes de sécurité."
               },
               {
                 question: "Quels types de matériaux utilisez-vous pour vos enseignes ?",
