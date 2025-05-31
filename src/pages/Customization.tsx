@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -100,6 +99,7 @@ const Customization = () => {
                     <SelectValue placeholder="Choisir le type de lettres" />
                   </SelectTrigger>
                   <SelectContent>
+                    <SelectItem value="lettres-decoupees-leds">Lettres découpées et lumineuses à leds sur mesure</SelectItem>
                     <SelectItem value="lettres-led">Lettres LED Lumineuses</SelectItem>
                     <SelectItem value="lettres-neon">Lettres Néon Flexible</SelectItem>
                     <SelectItem value="lettres-decoupees">Lettres Découpées (sans éclairage)</SelectItem>
