@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
@@ -44,7 +43,7 @@ const WhyChooseUs = () => {
                 to="/customization" 
                 className="inline-block bg-white text-black px-8 py-4 rounded text-lg font-bold transition-all hover:bg-opacity-80 mr-4"
               >
-                Configurateur d'enseignes
+                Création en ligne
               </Link>
               <Link 
                 to="/contact" 

@@ -46,7 +46,7 @@ const HeroSection = ({ isVisible }: HeroSectionProps) => {
               to="/customization"
               className="bg-white text-black px-8 py-4 rounded text-lg font-bold transition-all hover:bg-opacity-80"
             >
-              Configurateur d'enseignes
+              Création en ligne
             </Link>
             <Link
               to="/contact"
