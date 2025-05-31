@@ -42,9 +42,15 @@ const WhyChooseUs = () => {
             <div className="mt-10">
               <Link 
                 to="/customization" 
-                className="inline-block bg-white text-black px-8 py-4 rounded text-lg font-bold transition-all hover:bg-opacity-80"
+                className="inline-block bg-white text-black px-8 py-4 rounded text-lg font-bold transition-all hover:bg-opacity-80 mr-4"
               >
-                Créer mes lettres
+                Configurateur d'enseignes
+              </Link>
+              <Link 
+                to="/contact" 
+                className="inline-block bg-transparent border border-white text-white px-8 py-4 rounded text-lg font-bold transition-all hover:bg-white/10"
+              >
+                Faire un devis
               </Link>
             </div>
           </div>

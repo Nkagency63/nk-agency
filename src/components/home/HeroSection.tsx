@@ -46,13 +46,13 @@ const HeroSection = ({ isVisible }: HeroSectionProps) => {
               to="/customization"
               className="bg-white text-black px-8 py-4 rounded text-lg font-bold transition-all hover:bg-opacity-80"
             >
-              Créer mon enseigne
+              Configurateur d'enseignes
             </Link>
             <Link
-              to="/shop"
+              to="/contact"
               className="bg-transparent border border-white text-white px-8 py-4 rounded text-lg font-bold flex items-center justify-center gap-2 transition-all hover:bg-white/10"
             >
-              Voir le catalogue
+              Faire un devis
               <ChevronRight size={20} />
             </Link>
           </div>
