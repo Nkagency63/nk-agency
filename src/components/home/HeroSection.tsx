@@ -27,28 +27,32 @@ const HeroSection = ({ isVisible }: HeroSectionProps) => {
             isVisible ? "opacity-100" : "opacity-0 translate-y-10"
           }`}
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 text-white leading-tight">
-            Des Enseignes <span className="neon-text-blue"></span>
+          <div className="text-center mb-6">
+            <span className="inline-block bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              FABRICANT FRANÇAIS D'ENSEIGNES LUMINEUSES
+            </span>
+          </div>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 text-white leading-tight text-center">
+            <span className="neon-text-blue">LETTRES</span> et <span className="neon-text-pink">LOGOS</span>
             <br />
-            Qui Font <span className="neon-text-pink">Briller</span> Votre
-            Marque
+            Sur Mesure Pour Votre Enseigne
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mb-8">
-            NK AGENCY conçoit et réalise des enseignes publicitaires innovantes
-            et sur mesure pour donner vie à votre identité visuelle.
+          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 text-center">
+            Créez et commandez en ligne vos lettres lumineuses en toute simplicité. 
+            Kit d'installation fourni pour une pose facile sur votre mur ou panneau.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              to="/quote"
+              to="/customization"
               className="bg-white text-black px-8 py-4 rounded text-lg font-bold transition-all hover:bg-opacity-80"
             >
-              Demander un devis
+              Créer mon enseigne
             </Link>
             <Link
-              to="/portfolio"
+              to="/shop"
               className="bg-transparent border border-white text-white px-8 py-4 rounded text-lg font-bold flex items-center justify-center gap-2 transition-all hover:bg-white/10"
             >
-              Voir nos réalisations
+              Voir le catalogue
               <ChevronRight size={20} />
             </Link>
           </div>
