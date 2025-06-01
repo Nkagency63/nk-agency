@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -168,9 +169,9 @@ const Customization = () => {
                       <SelectContent>
                         {customization.style === 'lettres-decoupees' ? (
                           <>
-                            <SelectItem value="lettres-decoupees-pvc">Lettres découpées PVC</SelectItem>
-                            <SelectItem value="lettres-decoupees-alu">Lettres découpées Aluminium</SelectItem>
-                            <SelectItem value="lettres-relief">Lettres en Relief</SelectItem>
+                            <SelectItem value="pvc">PVC</SelectItem>
+                            <SelectItem value="alu">ALU</SelectItem>
+                            <SelectItem value="adhesif">ADHESIF</SelectItem>
                           </>
                         ) : (
                           <>
