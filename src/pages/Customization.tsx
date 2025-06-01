@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -8,7 +9,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Badge } from '@/components/ui/badge';
 import { Slider } from '@/components/ui/slider';
-import { Palette, Type, Ruler, Upload, Eye, ShoppingCart, Move } from 'lucide-react';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Palette, Type, Ruler, Upload, Eye, ShoppingCart, Move, AlertTriangle, Truck, Info } from 'lucide-react';
 import { toast } from 'sonner';
 import { useCart } from '@/contexts/CartContext';
 
@@ -90,6 +92,30 @@ const Customization = () => {
       </section>
 
       <div className="container mx-auto px-4 max-w-6xl">
+        {/* Alertes importantes */}
+        <div className="mb-8 space-y-4">
+          <Alert className="bg-green-900/20 border-green-700">
+            <Truck className="h-4 w-4 text-green-400" />
+            <AlertDescription className="text-green-300">
+              <strong>Livraison offerte à partir de 400€</strong>
+            </AlertDescription>
+          </Alert>
+          
+          <Alert className="bg-orange-900/20 border-orange-700">
+            <AlertTriangle className="h-4 w-4 text-orange-400" />
+            <AlertDescription className="text-orange-300">
+              <strong>Attention hauteur minimum 12 cm</strong>
+            </AlertDescription>
+          </Alert>
+          
+          <Alert className="bg-blue-900/20 border-blue-700">
+            <Info className="h-4 w-4 text-blue-400" />
+            <AlertDescription className="text-blue-300">
+              Prix HT. TVA non applicable, article 293 B du Code Général des impôts.
+            </AlertDescription>
+          </Alert>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-6">
             {/* Étape 1: Texte de l'enseigne */}
