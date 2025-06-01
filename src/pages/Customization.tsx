@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -222,42 +221,196 @@ const Customization = () => {
                         <SelectValue placeholder="Choisir un style de police" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="moderne">Moderne (Arial/Helvetica)</SelectItem>
-                        <SelectItem value="classique">Classique (Times)</SelectItem>
-                        <SelectItem value="script">Script (Élégant)</SelectItem>
-                        <SelectItem value="impact">Impact (Gras)</SelectItem>
-                        <SelectItem value="personnalisee">Police personnalisée</SelectItem>
+                        <SelectItem value="Anton-Regular">Anton-Regular</SelectItem>
+                        <SelectItem value="Aero">Aero</SelectItem>
+                        <SelectItem value="BasicSansHeavySFBold">BasicSansHeavySFBold</SelectItem>
+                        <SelectItem value="BasicSansHeavySFBolditalic">BasicSansHeavySFBolditalic</SelectItem>
+                        <SelectItem value="BlippoLightSF">BlippoLightSF</SelectItem>
+                        <SelectItem value="DejaVuSansMono-Bold">DejaVuSansMono-Bold</SelectItem>
+                        <SelectItem value="DejaVuSansMono-BoldOblique">DejaVuSansMono-BoldOblique</SelectItem>
+                        <SelectItem value="DiamondSFBold">DiamondSFBold</SelectItem>
+                        <SelectItem value="DiamondSFBoldItalic">DiamondSFBoldItalic</SelectItem>
+                        <SelectItem value="FranklinGothic-DemiCond">FranklinGothic-DemiCond</SelectItem>
+                        <SelectItem value="FranklinGothic-DemiItalic">FranklinGothic-DemiItalic</SelectItem>
+                        <SelectItem value="FuturaBT-ExtraBlackCondensed">FuturaBT-ExtraBlackCondensed</SelectItem>
+                        <SelectItem value="FuturaBT-ExtraBlackCondItalic">FuturaBT-ExtraBlackCondItalic</SelectItem>
+                        <SelectItem value="FuturaBT-Heavy">FuturaBT-Heavy</SelectItem>
+                        <SelectItem value="FuturaBT-HeavyItalic">FuturaBT-HeavyItalic</SelectItem>
+                        <SelectItem value="Geometric415BT-BlackItalicA">Geometric415BT-BlackItalicA</SelectItem>
+                        <SelectItem value="Geometric706BTMediumB">Geometric706BTMediumB</SelectItem>
+                        <SelectItem value="GrizzlyITCbyBT-Regular">GrizzlyITCbyBT-Regular</SelectItem>
+                        <SelectItem value="HPSimplified-Bold">HPSimplified-Bold</SelectItem>
+                        <SelectItem value="HPSimplified-BoldItalic">HPSimplified-BoldItalic</SelectItem>
+                        <SelectItem value="Humanist52IBT-BoldCondensed">Humanist52IBT-BoldCondensed</SelectItem>
+                        <SelectItem value="Humanist52IBT-BoldItalic">Humanist52IBT-BoldItalic</SelectItem>
+                        <SelectItem value="Impact">Impact</SelectItem>
+                        <SelectItem value="KabelLTCbyBT-Demi">KabelLTCbyBT-Demi</SelectItem>
+                        <SelectItem value="Lemon">Lemon</SelectItem>
+                        <SelectItem value="LucidaSansDemiItalic">LucidaSansDemiItalic</SelectItem>
+                        <SelectItem value="MSReferenceSansSerif-Bold">MSReferenceSansSerif-Bold</SelectItem>
+                        <SelectItem value="MSReferenceSansSerif-BoldItalic">MSReferenceSansSerif-BoldItalic</SelectItem>
+                        <SelectItem value="Neuropol-Regular">Neuropol-Regular</SelectItem>
+                        <SelectItem value="OldSansBlack">OldSansBlack</SelectItem>
+                        <SelectItem value="RakeslyRg-BoldItalic">RakeslyRg-BoldItalic</SelectItem>
+                        <SelectItem value="Sansation Regular">Sansation Regular</SelectItem>
+                        <SelectItem value="SourceSansPro-Semibold">SourceSansPro-Semibold</SelectItem>
+                        <SelectItem value="SourceSansPro-Semiboldlt">SourceSansPro-Semiboldlt</SelectItem>
+                        <SelectItem value="Trebuchet-Boldltalic">Trebuchet-Boldltalic</SelectItem>
+                        <SelectItem value="TrebuchetMS-Bold">TrebuchetMS-Bold</SelectItem>
+                        <SelectItem value="Verdana-Bold">Verdana-Bold</SelectItem>
+                        <SelectItem value="Verdana-BoldItalic">Verdana-BoldItalic</SelectItem>
+                        <SelectItem value="AccordSFBold">AccordSFBold</SelectItem>
+                        <SelectItem value="AlfaSlabOne-Regular">AlfaSlabOne-Regular</SelectItem>
+                        <SelectItem value="Arco">Arco</SelectItem>
+                        <SelectItem value="Arco-Italic">Arco-Italic</SelectItem>
+                        <SelectItem value="BangleBold">BangleBold</SelectItem>
+                        <SelectItem value="BookAntiqua-Bold">BookAntiqua-Bold</SelectItem>
+                        <SelectItem value="BookAntiqua-BoldItalic">BookAntiqua-BoldItalic</SelectItem>
+                        <SelectItem value="CataneoBT-Bold">CataneoBT-Bold</SelectItem>
+                        <SelectItem value="CheltenhamBT-BoldHeadline">CheltenhamBT-BoldHeadline</SelectItem>
+                        <SelectItem value="CheltenhamBT-BoldItalicHeadline">CheltenhamBT-BoldItalicHeadline</SelectItem>
+                        <SelectItem value="ChetenhamITCbyBT-Bold">ChetenhamITCbyBT-Bold</SelectItem>
+                        <SelectItem value="CheltenhamITCbyBT-Bolditalic">CheltenhamITCbyBT-Bolditalic</SelectItem>
+                        <SelectItem value="ClarendonBT-Bold">ClarendonBT-Bold</SelectItem>
+                        <SelectItem value="DejaVuSerifCondensed-Bold">DejaVuSerifCondensed-Bold</SelectItem>
+                        <SelectItem value="DejaVuSerifCondensed-BoldItalic">DejaVuSerifCondensed-BoldItalic</SelectItem>
+                        <SelectItem value="FrizQuadratalITCbyBT-Bold">FrizQuadratalITCbyBT-Bold</SelectItem>
+                        <SelectItem value="GalliardITCbyBT-BoldItalic">GalliardITCbyBT-BoldItalic</SelectItem>
+                        <SelectItem value="GaramondITCbyBTBold">GaramondITCbyBTBold</SelectItem>
+                        <SelectItem value="GaramondITCbyBTBoldItalic">GaramondITCbyBTBoldItalic</SelectItem>
+                        <SelectItem value="GrouchITCbyBT-Regular">GrouchITCbyBT-Regular</SelectItem>
+                        <SelectItem value="KabarettD">KabarettD</SelectItem>
+                        <SelectItem value="LiberationSerif-Bold">LiberationSerif-Bold</SelectItem>
+                        <SelectItem value="LiberationSerif-BoldItalic">LiberationSerif-BoldItalic</SelectItem>
+                        <SelectItem value="PalatinoLinotype-Bold">PalatinoLinotype-Bold</SelectItem>
+                        <SelectItem value="Palatinotype-BoldItalic">Palatinotype-BoldItalic</SelectItem>
+                        <SelectItem value="PcBrussels-Demi">PcBrussels-Demi</SelectItem>
+                        <SelectItem value="PcBrussels-DemiItalic">PcBrussels-DemiItalic</SelectItem>
+                        <SelectItem value="RenaultMN-Bold-Rockwell-Bold">RenaultMN-Bold-Rockwell-Bold</SelectItem>
+                        <SelectItem value="Rockwell-BoldItalic">Rockwell-BoldItalic</SelectItem>
+                        <SelectItem value="SeabirdSFBold">SeabirdSFBold</SelectItem>
+                        <SelectItem value="SeabirdSFBoldItalic">SeabirdSFBoldItalic</SelectItem>
+                        <SelectItem value="Subway-Black">Subway-Black</SelectItem>
+                        <SelectItem value="TimesNewRomanPS-BoldItalicMT">TimesNewRomanPS-BoldItalicMT</SelectItem>
+                        <SelectItem value="TimesNewRomanPS-BoldMT">TimesNewRomanPS-BoldMT</SelectItem>
+                        <SelectItem value="Titania">Titania</SelectItem>
+                        <SelectItem value="ABADDON">ABADDON</SelectItem>
+                        <SelectItem value="AdimesDBNormal">AdimesDBNormal</SelectItem>
+                        <SelectItem value="AdventurerBlackSF">AdventurerBlackSF</SelectItem>
+                        <SelectItem value="AdventurerBlackSFItalic">AdventurerBlackSFItalic</SelectItem>
+                        <SelectItem value="AKAPOSSE">AKAPOSSE</SelectItem>
+                        <SelectItem value="Alba">Alba</SelectItem>
+                        <SelectItem value="Amarante-Regular">Amarante-Regular</SelectItem>
+                        <SelectItem value="AmigaForever">AmigaForever</SelectItem>
+                        <SelectItem value="ANNACITCIT">ANNACITCIT</SelectItem>
+                        <SelectItem value="Batavia">Batavia</SelectItem>
+                        <SelectItem value="Belush-Regular">Belush-Regular</SelectItem>
+                        <SelectItem value="Bombardier">Bombardier</SelectItem>
+                        <SelectItem value="Broadway">Broadway</SelectItem>
+                        <SelectItem value="Chokko">Chokko</SelectItem>
+                        <SelectItem value="CloisterBlackBT-Regular">CloisterBlackBT-Regular</SelectItem>
+                        <SelectItem value="CroissantD">CroissantD</SelectItem>
+                        <SelectItem value="DAVIDBOLDBT-REGULAR">DAVIDBOLDBT-REGULAR</SelectItem>
+                        <SelectItem value="Demonized">Demonized</SelectItem>
+                        <SelectItem value="EastMarket">EastMarket</SelectItem>
+                        <SelectItem value="ELDURANGO">ELDURANGO</SelectItem>
+                        <SelectItem value="ExpoPlain">ExpoPlain</SelectItem>
+                        <SelectItem value="FlamencoD">FlamencoD</SelectItem>
+                        <SelectItem value="ForteMT">ForteMT</SelectItem>
+                        <SelectItem value="Germany">Germany</SelectItem>
+                        <SelectItem value="InversSF">InversSF</SelectItem>
+                        <SelectItem value="InviteSF">InviteSF</SelectItem>
+                        <SelectItem value="InviteSFItalic">InviteSFItalic</SelectItem>
+                        <SelectItem value="WEYPUNCHPLAIN">WEYPUNCHPLAIN</SelectItem>
+                        <SelectItem value="LatinWide">LatinWide</SelectItem>
+                        <SelectItem value="Magenta">Magenta</SelectItem>
+                        <SelectItem value="Nougat-ExtraBlack">Nougat-ExtraBlack</SelectItem>
+                        <SelectItem value="Urderpizza">Urderpizza</SelectItem>
+                        <SelectItem value="OSAKA-SANSSERIF">OSAKA-SANSSERIF</SelectItem>
+                        <SelectItem value="Prolamina">Prolamina</SelectItem>
+                        <SelectItem value="Ravie">Ravie</SelectItem>
+                        <SelectItem value="Realvirtue">Realvirtue</SelectItem>
+                        <SelectItem value="REVERTBRK">REVERTBRK</SelectItem>
+                        <SelectItem value="Saddlebag-Black">Saddlebag-Black</SelectItem>
+                        <SelectItem value="Sancreek-Regular">Sancreek-Regular</SelectItem>
+                        <SelectItem value="SLAMESEKatSONG">SLAMESEKatSONG</SelectItem>
+                        <SelectItem value="STENCIL">STENCIL</SelectItem>
+                        <SelectItem value="UltraSerifSF">UltraSerifSF</SelectItem>
+                        <SelectItem value="UnofficialBoPFont">UnofficialBoPFont</SelectItem>
+                        <SelectItem value="XpressSFBold">XpressSFBold</SelectItem>
+                        <SelectItem value="XpressSFBoldItalic">XpressSFBoldItalic</SelectItem>
+                        <SelectItem value="Aeolus">Aeolus</SelectItem>
+                        <SelectItem value="Airstream">Airstream</SelectItem>
+                        <SelectItem value="AmazeBold">AmazeBold</SelectItem>
+                        <SelectItem value="BallparkWeiner">BallparkWeiner</SelectItem>
+                        <SelectItem value="BarcBrushDBBold">BarcBrushDBBold</SelectItem>
+                        <SelectItem value="BerkshireSwash-Regular">BerkshireSwash-Regular</SelectItem>
+                        <SelectItem value="Birdsof Paradise">Birdsof Paradise</SelectItem>
+                        <SelectItem value="BlackDiamonds">BlackDiamonds</SelectItem>
+                        <SelectItem value="BukkariScript">BukkariScript</SelectItem>
+                        <SelectItem value="CaledaryHands">CaledaryHands</SelectItem>
+                        <SelectItem value="Cassia">Cassia</SelectItem>
+                        <SelectItem value="ComicSansMSBoldItalic">ComicSansMSBoldItalic</SelectItem>
+                        <SelectItem value="CoquetteRegular">CoquetteRegular</SelectItem>
+                        <SelectItem value="DisneyPrint">DisneyPrint</SelectItem>
+                        <SelectItem value="DJBMessyAmandaGoesBold">DJBMessyAmandaGoesBold</SelectItem>
+                        <SelectItem value="EmPower42-Condensed">EmPower42-Condensed</SelectItem>
+                        <SelectItem value="EnviroD">EnviroD</SelectItem>
+                        <SelectItem value="FenwayParkSF">FenwayParkSF</SelectItem>
+                        <SelectItem value="FlashD-Ligh">FlashD-Ligh</SelectItem>
+                        <SelectItem value="Freehand521BJ-RegularC">Freehand521BJ-RegularC</SelectItem>
+                        <SelectItem value="HarlowSolid">HarlowSolid</SelectItem>
+                        <SelectItem value="HaydonBrush">HaydonBrush</SelectItem>
+                        <SelectItem value="KaushanScript-Regular">KaushanScript-Regular</SelectItem>
+                        <SelectItem value="KinksDecor">KinksDecor</SelectItem>
+                        <SelectItem value="LaurenScript">LaurenScript</SelectItem>
+                        <SelectItem value="Lemon-Regular">Lemon-Regular</SelectItem>
+                        <SelectItem value="LilyScriptOne-Regular">LilyScriptOne-Regular</SelectItem>
+                        <SelectItem value="Lollipop">Lollipop</SelectItem>
+                        <SelectItem value="MarketingScript">MarketingScript</SelectItem>
+                        <SelectItem value="OleoScriot-Regular">OleoScriot-Regular</SelectItem>
+                        <SelectItem value="Pristina-Regular">Pristina-Regular</SelectItem>
+                        <SelectItem value="ReguitcedScript">ReguitcedScript</SelectItem>
+                        <SelectItem value="Skelman">Skelman</SelectItem>
+                        <SelectItem value="WrexhamScript">WrexhamScript</SelectItem>
+                        <SelectItem value="SimplyRounded">SimplyRounded</SelectItem>
+                        <SelectItem value="MontserraSemiBold">MontserraSemiBold</SelectItem>
+                        <SelectItem value="Oswald">Oswald</SelectItem>
+                        <SelectItem value="Timeless">Timeless</SelectItem>
+                        <SelectItem value="TimelessBold">TimelessBold</SelectItem>
+                        <SelectItem value="Frutiger-bold-cn">Frutiger-bold-cn</SelectItem>
+                        <SelectItem value="SellYourSoul">SellYourSoul</SelectItem>
+                        <SelectItem value="ChunkFive">ChunkFive</SelectItem>
+                        <SelectItem value="Arial">Arial</SelectItem>
                       </SelectContent>
                     </Select>
                   </CardContent>
                 </Card>
 
-                {customization.style === 'lettres-lumineuses' && (
-                  <Card className="bg-secondary border-gray-800">
-                    <CardHeader>
-                      <CardTitle className="text-white flex items-center">
-                        <Palette className="mr-2" />
-                        Couleur d'éclairage
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <Select onValueChange={(value) => handleInputChange('color', value)}>
-                        <SelectTrigger className="bg-black border-gray-700 text-white">
-                          <SelectValue placeholder="Choisir la couleur d'éclairage" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="blanc-chaud">Blanc Chaud</SelectItem>
-                          <SelectItem value="blanc-froid">Blanc Froid</SelectItem>
-                          <SelectItem value="rouge">Rouge</SelectItem>
-                          <SelectItem value="bleu">Bleu</SelectItem>
-                          <SelectItem value="vert">Vert</SelectItem>
-                          <SelectItem value="jaune">Jaune</SelectItem>
-                          <SelectItem value="multicolore">Multicolore (RGB)</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </CardContent>
-                  </Card>
-                )}
+                <Card className="bg-secondary border-gray-800">
+                  <CardHeader>
+                    <CardTitle className="text-white flex items-center">
+                      <Palette className="mr-2" />
+                      Couleur d'éclairage
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Select onValueChange={(value) => handleInputChange('color', value)}>
+                      <SelectTrigger className="bg-black border-gray-700 text-white">
+                        <SelectValue placeholder="Choisir la couleur d'éclairage" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="blanc-chaud">Blanc Chaud</SelectItem>
+                        <SelectItem value="blanc-froid">Blanc Froid</SelectItem>
+                        <SelectItem value="rouge">Rouge</SelectItem>
+                        <SelectItem value="bleu">Bleu</SelectItem>
+                        <SelectItem value="vert">Vert</SelectItem>
+                        <SelectItem value="jaune">Jaune</SelectItem>
+                        <SelectItem value="multicolore">Multicolore (RGB)</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </CardContent>
+                </Card>
 
                 <Card className="bg-secondary border-gray-800">
                   <CardHeader>
