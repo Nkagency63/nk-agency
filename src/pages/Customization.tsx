@@ -174,10 +174,8 @@ const Customization = () => {
                           </>
                         ) : (
                           <>
-                            <SelectItem value="lettres-decoupees-leds">Lettres découpées et lumineuses à leds sur mesure</SelectItem>
-                            <SelectItem value="lettres-led">Lettres LED Lumineuses</SelectItem>
-                            <SelectItem value="lettres-neon">Lettres Néon Flexible</SelectItem>
-                            <SelectItem value="logo-lumineux">Logo Lumineux Personnalisé</SelectItem>
+                            <SelectItem value="retro-pvc">Rétro PVC</SelectItem>
+                            <SelectItem value="boitier-alu">Boitier ALU</SelectItem>
                           </>
                         )}
                       </SelectContent>
