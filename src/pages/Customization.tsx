@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -8,7 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Badge } from '@/components/ui/badge';
-import { Palette, Type, Ruler, Upload, Eye, ShoppingCart } from 'lucide-react';
+import { Slider } from '@/components/ui/slider';
+import { Palette, Type, Ruler, Upload, Eye, ShoppingCart, Move } from 'lucide-react';
 import { toast } from 'sonner';
 import { useCart } from '@/contexts/CartContext';
 
@@ -26,6 +26,8 @@ const Customization = () => {
   });
 
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
+  const [letterWidth, setLetterWidth] = useState([40]);
+  const [letterHeight, setLetterHeight] = useState([30]);
 
   const handleInputChange = (field: string, value: string) => {
     setCustomization(prev => ({
@@ -347,7 +349,10 @@ const Customization = () => {
                           fontFamily: customization.font === 'script' ? 'cursive' :
                                     customization.font === 'impact' ? 'Impact' :
                                     customization.font || 'inherit',
-                          textShadow: customization.style === 'lettres-lumineuses' ? '0 0 20px currentColor' : 'none'
+                          textShadow: customization.style === 'lettres-lumineuses' ? '0 0 20px currentColor' : 'none',
+                          width: `${letterWidth[0]}%`,
+                          height: `${letterHeight[0]}px`,
+                          transform: `scale(${Math.min(letterWidth[0]/100, letterHeight[0]/50)})`
                         }}
                       >
                         {customization.text}
@@ -368,6 +373,49 @@ const Customization = () => {
                     <p className="text-gray-400">Saisissez votre texte pour voir l'aperçu</p>
                   )}
                 </div>
+
+                {/* Déplacer le bouton pour ajuster les dimensions */}
+                {customization.text && (
+                  <div className="mt-6 space-y-4">
+                    <Button 
+                      variant="outline"
+                      className="w-full border-gray-600 text-white hover:bg-gray-800"
+                    >
+                      <Move className="mr-2" size={16} />
+                      Déplacer le bouton pour ajuster les dimensions
+                    </Button>
+                    
+                    <div className="space-y-4">
+                      <div>
+                        <Label className="text-white text-sm mb-2 block">
+                          Largeur: {letterWidth[0]}%
+                        </Label>
+                        <Slider
+                          value={letterWidth}
+                          onValueChange={setLetterWidth}
+                          max={100}
+                          min={20}
+                          step={5}
+                          className="w-full"
+                        />
+                      </div>
+                      
+                      <div>
+                        <Label className="text-white text-sm mb-2 block">
+                          Hauteur: {letterHeight[0]}px
+                        </Label>
+                        <Slider
+                          value={letterHeight}
+                          onValueChange={setLetterHeight}
+                          max={80}
+                          min={20}
+                          step={5}
+                          className="w-full"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
               </CardContent>
             </Card>
 
