@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -27,8 +26,8 @@ const Customization = () => {
   });
 
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
-  const [letterWidth, setLetterWidth] = useState([40]);
-  const [letterHeight, setLetterHeight] = useState([30]);
+  const [letterHeight, setLetterHeight] = useState([30]); // Hauteur totale en cm
+  const [letterWidth, setLetterWidth] = useState([100]); // Longueur totale en cm
 
   const handleInputChange = (field: string, value: string) => {
     setCustomization(prev => ({
@@ -348,10 +347,7 @@ const Customization = () => {
                           fontFamily: customization.font === 'script' ? 'cursive' :
                                     customization.font === 'impact' ? 'Impact' :
                                     customization.font || 'inherit',
-                          textShadow: customization.style === 'lettres-lumineuses' ? '0 0 20px currentColor' : 'none',
-                          width: `${letterWidth[0]}%`,
-                          height: `${letterHeight[0]}px`,
-                          transform: `scale(${Math.min(letterWidth[0]/100, letterHeight[0]/50)})`
+                          textShadow: customization.style === 'lettres-lumineuses' ? '0 0 20px currentColor' : 'none'
                         }}
                       >
                         {customization.text}
@@ -373,9 +369,45 @@ const Customization = () => {
                   )}
                 </div>
 
-                {/* Déplacer le bouton pour ajuster les dimensions */}
+                {/* Section dimensions et schéma */}
                 {customization.text && (
-                  <div className="mt-6 space-y-4">
+                  <div className="mt-6 space-y-6">
+                    {/* Schéma de l'encadrement */}
+                    <div className="bg-gray-900 rounded-lg p-6">
+                      <h4 className="text-white font-semibold mb-4 text-center">Schéma de l'encadrement</h4>
+                      <div className="relative bg-black rounded border-2 border-gray-600 p-8 mx-auto max-w-md">
+                        {/* Schéma avec dimensions */}
+                        <div className="relative border-2 border-dashed border-gray-400 p-4 min-h-[120px] flex items-center justify-center">
+                          <span className="text-white text-sm font-medium">{customization.text}</span>
+                          
+                          {/* Flèche et dimension hauteur (a) */}
+                          <div className="absolute -left-8 top-0 bottom-0 flex items-center">
+                            <div className="flex flex-col items-center">
+                              <div className="h-full border-l border-gray-400"></div>
+                              <div className="absolute top-0 w-2 h-2 border-t border-l border-gray-400 transform -rotate-45"></div>
+                              <div className="absolute bottom-0 w-2 h-2 border-b border-r border-gray-400 transform -rotate-45"></div>
+                              <span className="absolute -left-8 text-gray-300 text-xs whitespace-nowrap transform -rotate-90">
+                                a - {letterHeight[0]} cm
+                              </span>
+                            </div>
+                          </div>
+                          
+                          {/* Flèche et dimension longueur (b) */}
+                          <div className="absolute -bottom-8 left-0 right-0 flex justify-center">
+                            <div className="flex items-center">
+                              <div className="w-full border-b border-gray-400"></div>
+                              <div className="absolute left-0 w-2 h-2 border-b border-l border-gray-400 transform rotate-45"></div>
+                              <div className="absolute right-0 w-2 h-2 border-t border-r border-gray-400 transform rotate-45"></div>
+                              <span className="absolute -bottom-6 text-gray-300 text-xs whitespace-nowrap">
+                                b - {letterWidth[0]} cm
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Contrôles pour ajuster les dimensions */}
                     <Button 
                       variant="outline"
                       className="w-full border-gray-600 text-white hover:bg-gray-800"
@@ -387,13 +419,13 @@ const Customization = () => {
                     <div className="space-y-4">
                       <div>
                         <Label className="text-white text-sm mb-2 block">
-                          Largeur: {letterWidth[0]}%
+                          a - Hauteur totale: {letterHeight[0]} cm
                         </Label>
                         <Slider
-                          value={letterWidth}
-                          onValueChange={setLetterWidth}
-                          max={100}
-                          min={20}
+                          value={letterHeight}
+                          onValueChange={setLetterHeight}
+                          max={200}
+                          min={10}
                           step={5}
                           className="w-full"
                         />
@@ -401,14 +433,14 @@ const Customization = () => {
                       
                       <div>
                         <Label className="text-white text-sm mb-2 block">
-                          Hauteur: {letterHeight[0]}px
+                          b - Longueur totale: {letterWidth[0]} cm
                         </Label>
                         <Slider
-                          value={letterHeight}
-                          onValueChange={setLetterHeight}
-                          max={80}
+                          value={letterWidth}
+                          onValueChange={setLetterWidth}
+                          max={500}
                           min={20}
-                          step={5}
+                          step={10}
                           className="w-full"
                         />
                       </div>
