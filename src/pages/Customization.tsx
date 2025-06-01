@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -5,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Badge } from '@/components/ui/badge';
 import { Palette, Type, Ruler, Upload, Eye, ShoppingCart } from 'lucide-react';
 import { toast } from 'sonner';
@@ -13,8 +15,9 @@ import { useCart } from '@/contexts/CartContext';
 const Customization = () => {
   const { addToCart } = useCart();
   const [customization, setCustomization] = useState({
-    type: '',
     text: '',
+    style: '',
+    type: '',
     font: '',
     color: '',
     size: '',
@@ -39,19 +42,19 @@ const Customization = () => {
   };
 
   const handleAddToCart = () => {
-    if (!customization.type || !customization.text) {
-      toast.error('Veuillez remplir au minimum le type et le texte de votre enseigne');
+    if (!customization.text || !customization.style) {
+      toast.error('Veuillez remplir le texte et choisir un style pour votre enseigne');
       return;
     }
 
     const customProduct = {
       id: `custom-${Date.now()}`,
-      name: `${customization.text} - ${customization.type}`,
+      name: `${customization.text} - ${customization.style}`,
       description: `Lettres personnalisées "${customization.text}"`,
       price: getEstimatedPrice(),
       category: 'Personnalisé',
       image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?auto=format&fit=crop&q=80',
-      features: [`Texte: ${customization.text}`, `Type: ${customization.type}`, `Couleur: ${customization.color}`, `Taille: ${customization.size}`],
+      features: [`Texte: ${customization.text}`, `Style: ${customization.style}`, `Couleur: ${customization.color}`, `Taille: ${customization.size}`],
       customizable: true,
       inStock: true
     };
@@ -66,6 +69,7 @@ const Customization = () => {
 
   const getEstimatedPrice = () => {
     let basePrice = 150;
+    if (customization.style === 'lettres-lumineuses') basePrice += 100;
     if (customization.size === 'large') basePrice += 100;
     if (customization.size === 'xl') basePrice += 200;
     if (customization.material === 'premium') basePrice += 150;
@@ -86,35 +90,12 @@ const Customization = () => {
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-6">
+            {/* Étape 1: Texte de l'enseigne */}
             <Card className="bg-secondary border-gray-800">
               <CardHeader>
                 <CardTitle className="text-white flex items-center">
                   <Type className="mr-2" />
-                  Type de lettres / logo
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Select onValueChange={(value) => handleInputChange('type', value)}>
-                  <SelectTrigger className="bg-black border-gray-700 text-white">
-                    <SelectValue placeholder="Choisir le type de lettres" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="lettres-decoupees-leds">Lettres découpées et lumineuses à leds sur mesure</SelectItem>
-                    <SelectItem value="lettres-led">Lettres LED Lumineuses</SelectItem>
-                    <SelectItem value="lettres-neon">Lettres Néon Flexible</SelectItem>
-                    <SelectItem value="lettres-decoupees">Lettres Découpées (sans éclairage)</SelectItem>
-                    <SelectItem value="logo-lumineux">Logo Lumineux Personnalisé</SelectItem>
-                    <SelectItem value="lettres-relief">Lettres en Relief</SelectItem>
-                  </SelectContent>
-                </Select>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-secondary border-gray-800">
-              <CardHeader>
-                <CardTitle className="text-white flex items-center">
-                  <Type className="mr-2" />
-                  Votre texte ou nom
+                  1. Insérez le texte pour votre enseigne
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -128,127 +109,215 @@ const Customization = () => {
                     className="bg-black border-gray-700 text-white"
                   />
                 </div>
-                <div>
-                  <Label htmlFor="font">Style de police</Label>
-                  <Select onValueChange={(value) => handleInputChange('font', value)}>
-                    <SelectTrigger className="bg-black border-gray-700 text-white">
-                      <SelectValue placeholder="Choisir un style de police" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="moderne">Moderne (Arial/Helvetica)</SelectItem>
-                      <SelectItem value="classique">Classique (Times)</SelectItem>
-                      <SelectItem value="script">Script (Élégant)</SelectItem>
-                      <SelectItem value="impact">Impact (Gras)</SelectItem>
-                      <SelectItem value="personnalisee">Police personnalisée</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
               </CardContent>
             </Card>
 
+            {/* Étape 2: Style des lettres */}
             <Card className="bg-secondary border-gray-800">
               <CardHeader>
                 <CardTitle className="text-white flex items-center">
-                  <Palette className="mr-2" />
-                  Couleur et matériau
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <Label htmlFor="color">Couleur d'éclairage</Label>
-                  <Select onValueChange={(value) => handleInputChange('color', value)}>
-                    <SelectTrigger className="bg-black border-gray-700 text-white">
-                      <SelectValue placeholder="Choisir la couleur d'éclairage" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="blanc-chaud">Blanc Chaud</SelectItem>
-                      <SelectItem value="blanc-froid">Blanc Froid</SelectItem>
-                      <SelectItem value="rouge">Rouge</SelectItem>
-                      <SelectItem value="bleu">Bleu</SelectItem>
-                      <SelectItem value="vert">Vert</SelectItem>
-                      <SelectItem value="jaune">Jaune</SelectItem>
-                      <SelectItem value="multicolore">Multicolore (RGB)</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div>
-                  <Label htmlFor="material">Matériau des lettres</Label>
-                  <Select onValueChange={(value) => handleInputChange('material', value)}>
-                    <SelectTrigger className="bg-black border-gray-700 text-white">
-                      <SelectValue placeholder="Choisir le matériau" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="acrylique">Acrylique (Standard)</SelectItem>
-                      <SelectItem value="aluminium">Aluminium (Premium) +150€</SelectItem>
-                      <SelectItem value="pvc">PVC (Économique)</SelectItem>
-                      <SelectItem value="inox">Inox (Haut de gamme)</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-secondary border-gray-800">
-              <CardHeader>
-                <CardTitle className="text-white flex items-center">
-                  <Ruler className="mr-2" />
-                  Hauteur des lettres
+                  <Type className="mr-2" />
+                  2. Choisissez un style
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <Select onValueChange={(value) => handleInputChange('size', value)}>
-                  <SelectTrigger className="bg-black border-gray-700 text-white">
-                    <SelectValue placeholder="Choisir la hauteur des lettres" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="small">10-20 cm (Petites enseignes)</SelectItem>
-                    <SelectItem value="medium">20-40 cm (Standard)</SelectItem>
-                    <SelectItem value="large">40-60 cm (Grandes) +100€</SelectItem>
-                    <SelectItem value="xl">60+ cm (Très grandes) +200€</SelectItem>
-                  </SelectContent>
-                </Select>
+                <RadioGroup 
+                  value={customization.style} 
+                  onValueChange={(value) => handleInputChange('style', value)}
+                  className="space-y-4"
+                >
+                  <div className="flex items-center space-x-2 p-4 border border-gray-700 rounded-lg hover:border-gray-600 transition-colors">
+                    <RadioGroupItem value="lettres-decoupees" id="lettres-decoupees" />
+                    <Label htmlFor="lettres-decoupees" className="text-white cursor-pointer flex-1">
+                      <div>
+                        <div className="font-semibold">Lettres découpées</div>
+                        <div className="text-gray-400 text-sm">Lettres en relief sans éclairage</div>
+                      </div>
+                    </Label>
+                  </div>
+                  <div className="flex items-center space-x-2 p-4 border border-gray-700 rounded-lg hover:border-gray-600 transition-colors">
+                    <RadioGroupItem value="lettres-lumineuses" id="lettres-lumineuses" />
+                    <Label htmlFor="lettres-lumineuses" className="text-white cursor-pointer flex-1">
+                      <div>
+                        <div className="font-semibold">Lettres lumineuses</div>
+                        <div className="text-gray-400 text-sm">Lettres avec éclairage LED +100€</div>
+                      </div>
+                    </Label>
+                  </div>
+                </RadioGroup>
               </CardContent>
             </Card>
 
-            <Card className="bg-secondary border-gray-800">
-              <CardHeader>
-                <CardTitle className="text-white flex items-center">
-                  <Upload className="mr-2" />
-                  Votre logo (optionnel)
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div>
-                  <Label htmlFor="file">Télécharger votre logo pour devis personnalisé</Label>
-                  <input
-                    id="file"
-                    type="file"
-                    accept="image/*,.pdf,.ai,.eps"
-                    onChange={handleFileUpload}
-                    className="w-full mt-2 text-white file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:bg-white file:text-black hover:file:bg-gray-200"
-                  />
-                  {uploadedFile && (
-                    <p className="text-green-400 text-sm mt-2">
-                      Logo téléchargé: {uploadedFile.name}
-                    </p>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
+            {/* Options avancées */}
+            {customization.style && (
+              <>
+                <Card className="bg-secondary border-gray-800">
+                  <CardHeader>
+                    <CardTitle className="text-white flex items-center">
+                      <Type className="mr-2" />
+                      Type spécifique
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Select onValueChange={(value) => handleInputChange('type', value)}>
+                      <SelectTrigger className="bg-black border-gray-700 text-white">
+                        <SelectValue placeholder="Choisir le type spécifique (optionnel)" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {customization.style === 'lettres-decoupees' ? (
+                          <>
+                            <SelectItem value="lettres-decoupees-pvc">Lettres découpées PVC</SelectItem>
+                            <SelectItem value="lettres-decoupees-alu">Lettres découpées Aluminium</SelectItem>
+                            <SelectItem value="lettres-relief">Lettres en Relief</SelectItem>
+                          </>
+                        ) : (
+                          <>
+                            <SelectItem value="lettres-decoupees-leds">Lettres découpées et lumineuses à leds sur mesure</SelectItem>
+                            <SelectItem value="lettres-led">Lettres LED Lumineuses</SelectItem>
+                            <SelectItem value="lettres-neon">Lettres Néon Flexible</SelectItem>
+                            <SelectItem value="logo-lumineux">Logo Lumineux Personnalisé</SelectItem>
+                          </>
+                        )}
+                      </SelectContent>
+                    </Select>
+                  </CardContent>
+                </Card>
 
-            <Card className="bg-secondary border-gray-800">
-              <CardHeader>
-                <CardTitle className="text-white">Informations complémentaires</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Textarea
-                  value={customization.description}
-                  onChange={(e) => handleInputChange('description', e.target.value)}
-                  placeholder="Précisions sur l'installation, contraintes particulières, demandes spéciales..."
-                  className="bg-black border-gray-700 text-white min-h-[100px]"
-                />
-              </CardContent>
-            </Card>
+                <Card className="bg-secondary border-gray-800">
+                  <CardHeader>
+                    <CardTitle className="text-white flex items-center">
+                      <Type className="mr-2" />
+                      Style de police
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Select onValueChange={(value) => handleInputChange('font', value)}>
+                      <SelectTrigger className="bg-black border-gray-700 text-white">
+                        <SelectValue placeholder="Choisir un style de police" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="moderne">Moderne (Arial/Helvetica)</SelectItem>
+                        <SelectItem value="classique">Classique (Times)</SelectItem>
+                        <SelectItem value="script">Script (Élégant)</SelectItem>
+                        <SelectItem value="impact">Impact (Gras)</SelectItem>
+                        <SelectItem value="personnalisee">Police personnalisée</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </CardContent>
+                </Card>
+
+                {customization.style === 'lettres-lumineuses' && (
+                  <Card className="bg-secondary border-gray-800">
+                    <CardHeader>
+                      <CardTitle className="text-white flex items-center">
+                        <Palette className="mr-2" />
+                        Couleur d'éclairage
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <Select onValueChange={(value) => handleInputChange('color', value)}>
+                        <SelectTrigger className="bg-black border-gray-700 text-white">
+                          <SelectValue placeholder="Choisir la couleur d'éclairage" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="blanc-chaud">Blanc Chaud</SelectItem>
+                          <SelectItem value="blanc-froid">Blanc Froid</SelectItem>
+                          <SelectItem value="rouge">Rouge</SelectItem>
+                          <SelectItem value="bleu">Bleu</SelectItem>
+                          <SelectItem value="vert">Vert</SelectItem>
+                          <SelectItem value="jaune">Jaune</SelectItem>
+                          <SelectItem value="multicolore">Multicolore (RGB)</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </CardContent>
+                  </Card>
+                )}
+
+                <Card className="bg-secondary border-gray-800">
+                  <CardHeader>
+                    <CardTitle className="text-white flex items-center">
+                      <Palette className="mr-2" />
+                      Matériau des lettres
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Select onValueChange={(value) => handleInputChange('material', value)}>
+                      <SelectTrigger className="bg-black border-gray-700 text-white">
+                        <SelectValue placeholder="Choisir le matériau" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="acrylique">Acrylique (Standard)</SelectItem>
+                        <SelectItem value="aluminium">Aluminium (Premium) +150€</SelectItem>
+                        <SelectItem value="pvc">PVC (Économique)</SelectItem>
+                        <SelectItem value="inox">Inox (Haut de gamme)</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-secondary border-gray-800">
+                  <CardHeader>
+                    <CardTitle className="text-white flex items-center">
+                      <Ruler className="mr-2" />
+                      Hauteur des lettres
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Select onValueChange={(value) => handleInputChange('size', value)}>
+                      <SelectTrigger className="bg-black border-gray-700 text-white">
+                        <SelectValue placeholder="Choisir la hauteur des lettres" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="small">10-20 cm (Petites enseignes)</SelectItem>
+                        <SelectItem value="medium">20-40 cm (Standard)</SelectItem>
+                        <SelectItem value="large">40-60 cm (Grandes) +100€</SelectItem>
+                        <SelectItem value="xl">60+ cm (Très grandes) +200€</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-secondary border-gray-800">
+                  <CardHeader>
+                    <CardTitle className="text-white flex items-center">
+                      <Upload className="mr-2" />
+                      Votre logo (optionnel)
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div>
+                      <Label htmlFor="file">Télécharger votre logo pour devis personnalisé</Label>
+                      <input
+                        id="file"
+                        type="file"
+                        accept="image/*,.pdf,.ai,.eps"
+                        onChange={handleFileUpload}
+                        className="w-full mt-2 text-white file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:bg-white file:text-black hover:file:bg-gray-200"
+                      />
+                      {uploadedFile && (
+                        <p className="text-green-400 text-sm mt-2">
+                          Logo téléchargé: {uploadedFile.name}
+                        </p>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-secondary border-gray-800">
+                  <CardHeader>
+                    <CardTitle className="text-white">Informations complémentaires</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Textarea
+                      value={customization.description}
+                      onChange={(e) => handleInputChange('description', e.target.value)}
+                      placeholder="Précisions sur l'installation, contraintes particulières, demandes spéciales..."
+                      className="bg-black border-gray-700 text-white min-h-[100px]"
+                    />
+                  </CardContent>
+                </Card>
+              </>
+            )}
           </div>
 
           <div className="space-y-6">
@@ -265,25 +334,27 @@ const Customization = () => {
                     <div className="space-y-4">
                       <div 
                         className={`text-4xl font-bold ${
-                          customization.color === 'rouge' ? 'text-red-400' :
-                          customization.color === 'bleu' ? 'text-blue-400' :
-                          customization.color === 'vert' ? 'text-green-400' :
-                          customization.color === 'jaune' ? 'text-yellow-400' :
-                          customization.color === 'multicolore' ? 'text-pink-400' :
-                          'text-white'
+                          customization.style === 'lettres-lumineuses' ? (
+                            customization.color === 'rouge' ? 'text-red-400' :
+                            customization.color === 'bleu' ? 'text-blue-400' :
+                            customization.color === 'vert' ? 'text-green-400' :
+                            customization.color === 'jaune' ? 'text-yellow-400' :
+                            customization.color === 'multicolore' ? 'text-pink-400' :
+                            'text-white'
+                          ) : 'text-gray-300'
                         }`}
                         style={{
                           fontFamily: customization.font === 'script' ? 'cursive' :
                                     customization.font === 'impact' ? 'Impact' :
                                     customization.font || 'inherit',
-                          textShadow: '0 0 20px currentColor'
+                          textShadow: customization.style === 'lettres-lumineuses' ? '0 0 20px currentColor' : 'none'
                         }}
                       >
                         {customization.text}
                       </div>
                       <div className="flex flex-wrap gap-2 justify-center">
-                        {customization.type && (
-                          <Badge variant="secondary">{customization.type}</Badge>
+                        {customization.style && (
+                          <Badge variant="secondary">{customization.style}</Badge>
                         )}
                         {customization.color && (
                           <Badge variant="secondary">{customization.color}</Badge>
@@ -317,6 +388,12 @@ const Customization = () => {
                       <span>Lettres de base</span>
                       <span>150€</span>
                     </div>
+                    {customization.style === 'lettres-lumineuses' && (
+                      <div className="flex justify-between">
+                        <span>Éclairage LED</span>
+                        <span>+100€</span>
+                      </div>
+                    )}
                     {customization.size === 'large' && (
                       <div className="flex justify-between">
                         <span>Grandes lettres</span>
@@ -343,7 +420,7 @@ const Customization = () => {
             <div className="grid grid-cols-1 gap-4">
               <Button 
                 onClick={handleAddToCart}
-                disabled={!customization.type || !customization.text}
+                disabled={!customization.text || !customization.style}
                 className="w-full bg-white text-black hover:bg-gray-200 text-lg py-6"
               >
                 <ShoppingCart size={20} className="mr-2" />
@@ -352,7 +429,7 @@ const Customization = () => {
               
               <Button 
                 onClick={handleQuoteRequest}
-                disabled={!customization.type || !customization.text}
+                disabled={!customization.text || !customization.style}
                 variant="outline"
                 className="w-full border-gray-600 text-white hover:bg-gray-800 text-lg py-6"
               >
