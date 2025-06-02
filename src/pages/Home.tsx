@@ -6,7 +6,6 @@ import FeaturedProjects from "../components/home/FeaturedProjects";
 import InstallationSection from "../components/home/InstallationSection";
 import WhyChooseUs from "../components/home/WhyChooseUs";
 import CTASection from "../components/home/CTASection";
-import MaintenanceToggle from "../components/MaintenanceToggle";
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,7 +22,6 @@ const Home = () => {
       <FeaturedProjects />
       <WhyChooseUs />
       <CTASection />
-      <MaintenanceToggle />
     </div>
   );
 };
