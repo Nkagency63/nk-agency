@@ -1,8 +1,6 @@
-
 import { useState, useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import Cart from "@/components/shop/Cart";
 
 const Layout = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -98,8 +96,6 @@ const Layout = () => {
           </div>
         )}
       </header>
-
-      <Cart />
 
       <main className="flex-grow">
         <Outlet />
