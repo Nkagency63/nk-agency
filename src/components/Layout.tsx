@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -28,9 +29,7 @@ const Layout = () => {
 
   const navigation = [
     { name: 'Accueil', path: '/' },
-    { name: 'Boutique', path: '/shop' },
     { name: 'Personnalisation', path: '/customization' },
-    { name: 'Suivi de commande', path: '/order-tracking' },
     { name: 'À propos', path: '/about' },
     { name: 'Contact', path: '/contact' }
   ];
@@ -124,21 +123,11 @@ const Layout = () => {
             </div>
             
             <div>
-              <h3 className="text-xl font-bold mb-4 text-white">Boutique</h3>
+              <h3 className="text-xl font-bold mb-4 text-white">Services</h3>
               <ul className="space-y-2">
-                <li>
-                  <Link to="/shop" className="text-gray-400 hover:text-white transition-colors">
-                    Tous les produits
-                  </Link>
-                </li>
                 <li>
                   <Link to="/customization" className="text-gray-400 hover:text-white transition-colors">
                     Personnalisation
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/order-tracking" className="text-gray-400 hover:text-white transition-colors">
-                    Suivi de commande
                   </Link>
                 </li>
               </ul>
